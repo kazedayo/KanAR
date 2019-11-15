@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42B3CF2C237EAADE003FD4AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF2B237EAADE003FD4AB /* AppDelegate.swift */; };
+		42B3CF2E237EAADE003FD4AB /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B3CF2D237EAADE003FD4AB /* art.scnassets */; };
+		42B3CF30237EAADE003FD4AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF2F237EAADE003FD4AB /* ViewController.swift */; };
+		42B3CF33237EAADE003FD4AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B3CF31237EAADE003FD4AB /* Main.storyboard */; };
+		42B3CF35237EAAE1003FD4AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B3CF34237EAAE1003FD4AB /* Assets.xcassets */; };
+		42B3CF38237EAAE1003FD4AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B3CF36237EAAE1003FD4AB /* LaunchScreen.storyboard */; };
+		42B3CF43237EAAE1003FD4AB /* KanARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF42237EAAE1003FD4AB /* KanARTests.swift */; };
+		42B3CF4E237EAAE1003FD4AB /* KanARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF4D237EAAE1003FD4AB /* KanARUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42B3CF3F237EAAE1003FD4AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42B3CF20237EAADE003FD4AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42B3CF27237EAADE003FD4AB;
+			remoteInfo = KanAR;
+		};
+		42B3CF4A237EAAE1003FD4AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42B3CF20237EAADE003FD4AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42B3CF27237EAADE003FD4AB;
+			remoteInfo = KanAR;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42B3CF28237EAADE003FD4AB /* KanAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42B3CF2B237EAADE003FD4AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42B3CF2D237EAADE003FD4AB /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		42B3CF2F237EAADE003FD4AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		42B3CF32237EAADE003FD4AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42B3CF34237EAAE1003FD4AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42B3CF37237EAAE1003FD4AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42B3CF39237EAAE1003FD4AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42B3CF3E237EAAE1003FD4AB /* KanARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanARTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42B3CF42237EAAE1003FD4AB /* KanARTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanARTests.swift; sourceTree = "<group>"; };
+		42B3CF44237EAAE1003FD4AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42B3CF49237EAAE1003FD4AB /* KanARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42B3CF4D237EAAE1003FD4AB /* KanARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanARUITests.swift; sourceTree = "<group>"; };
+		42B3CF4F237EAAE1003FD4AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42B3CF25237EAADE003FD4AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42B3CF3B237EAAE1003FD4AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42B3CF46237EAAE1003FD4AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42B3CF1F237EAADE003FD4AB = {
+			isa = PBXGroup;
+			children = (
+				42B3CF2A237EAADE003FD4AB /* KanAR */,
+				42B3CF41237EAAE1003FD4AB /* KanARTests */,
+				42B3CF4C237EAAE1003FD4AB /* KanARUITests */,
+				42B3CF29237EAADE003FD4AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42B3CF29237EAADE003FD4AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42B3CF28237EAADE003FD4AB /* KanAR.app */,
+				42B3CF3E237EAAE1003FD4AB /* KanARTests.xctest */,
+				42B3CF49237EAAE1003FD4AB /* KanARUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42B3CF2A237EAADE003FD4AB /* KanAR */ = {
+			isa = PBXGroup;
+			children = (
+				42B3CF2B237EAADE003FD4AB /* AppDelegate.swift */,
+				42B3CF2D237EAADE003FD4AB /* art.scnassets */,
+				42B3CF2F237EAADE003FD4AB /* ViewController.swift */,
+				42B3CF31237EAADE003FD4AB /* Main.storyboard */,
+				42B3CF34237EAAE1003FD4AB /* Assets.xcassets */,
+				42B3CF36237EAAE1003FD4AB /* LaunchScreen.storyboard */,
+				42B3CF39237EAAE1003FD4AB /* Info.plist */,
+			);
+			path = KanAR;
+			sourceTree = "<group>";
+		};
+		42B3CF41237EAAE1003FD4AB /* KanARTests */ = {
+			isa = PBXGroup;
+			children = (
+				42B3CF42237EAAE1003FD4AB /* KanARTests.swift */,
+				42B3CF44237EAAE1003FD4AB /* Info.plist */,
+			);
+			path = KanARTests;
+			sourceTree = "<group>";
+		};
+		42B3CF4C237EAAE1003FD4AB /* KanARUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42B3CF4D237EAAE1003FD4AB /* KanARUITests.swift */,
+				42B3CF4F237EAAE1003FD4AB /* Info.plist */,
+			);
+			path = KanARUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42B3CF27237EAADE003FD4AB /* KanAR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42B3CF52237EAAE1003FD4AB /* Build configuration list for PBXNativeTarget "KanAR" */;
+			buildPhases = (
+				42B3CF24237EAADE003FD4AB /* Sources */,
+				42B3CF25237EAADE003FD4AB /* Frameworks */,
+				42B3CF26237EAADE003FD4AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KanAR;
+			productName = KanAR;
+			productReference = 42B3CF28237EAADE003FD4AB /* KanAR.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42B3CF3D237EAAE1003FD4AB /* KanARTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42B3CF55237EAAE1003FD4AB /* Build configuration list for PBXNativeTarget "KanARTests" */;
+			buildPhases = (
+				42B3CF3A237EAAE1003FD4AB /* Sources */,
+				42B3CF3B237EAAE1003FD4AB /* Frameworks */,
+				42B3CF3C237EAAE1003FD4AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42B3CF40237EAAE1003FD4AB /* PBXTargetDependency */,
+			);
+			name = KanARTests;
+			productName = KanARTests;
+			productReference = 42B3CF3E237EAAE1003FD4AB /* KanARTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		42B3CF48237EAAE1003FD4AB /* KanARUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42B3CF58237EAAE1003FD4AB /* Build configuration list for PBXNativeTarget "KanARUITests" */;
+			buildPhases = (
+				42B3CF45237EAAE1003FD4AB /* Sources */,
+				42B3CF46237EAAE1003FD4AB /* Frameworks */,
+				42B3CF47237EAAE1003FD4AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42B3CF4B237EAAE1003FD4AB /* PBXTargetDependency */,
+			);
+			name = KanARUITests;
+			productName = KanARUITests;
+			productReference = 42B3CF49237EAAE1003FD4AB /* KanARUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42B3CF20237EAADE003FD4AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Kin Wa Lam";
+				TargetAttributes = {
+					42B3CF27237EAADE003FD4AB = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					42B3CF3D237EAAE1003FD4AB = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 42B3CF27237EAADE003FD4AB;
+					};
+					42B3CF48237EAAE1003FD4AB = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 42B3CF27237EAADE003FD4AB;
+					};
+				};
+			};
+			buildConfigurationList = 42B3CF23237EAADE003FD4AB /* Build configuration list for PBXProject "KanAR" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42B3CF1F237EAADE003FD4AB;
+			productRefGroup = 42B3CF29237EAADE003FD4AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42B3CF27237EAADE003FD4AB /* KanAR */,
+				42B3CF3D237EAAE1003FD4AB /* KanARTests */,
+				42B3CF48237EAAE1003FD4AB /* KanARUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42B3CF26237EAADE003FD4AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42B3CF2E237EAADE003FD4AB /* art.scnassets in Resources */,
+				42B3CF38237EAAE1003FD4AB /* LaunchScreen.storyboard in Resources */,
+				42B3CF35237EAAE1003FD4AB /* Assets.xcassets in Resources */,
+				42B3CF33237EAADE003FD4AB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42B3CF3C237EAAE1003FD4AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42B3CF47237EAAE1003FD4AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42B3CF24237EAADE003FD4AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42B3CF30237EAADE003FD4AB /* ViewController.swift in Sources */,
+				42B3CF2C237EAADE003FD4AB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42B3CF3A237EAAE1003FD4AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42B3CF43237EAAE1003FD4AB /* KanARTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42B3CF45237EAAE1003FD4AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42B3CF4E237EAAE1003FD4AB /* KanARUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42B3CF40237EAAE1003FD4AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42B3CF27237EAADE003FD4AB /* KanAR */;
+			targetProxy = 42B3CF3F237EAAE1003FD4AB /* PBXContainerItemProxy */;
+		};
+		42B3CF4B237EAAE1003FD4AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42B3CF27237EAADE003FD4AB /* KanAR */;
+			targetProxy = 42B3CF4A237EAAE1003FD4AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42B3CF31237EAADE003FD4AB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42B3CF32237EAADE003FD4AB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		42B3CF36237EAAE1003FD4AB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42B3CF37237EAAE1003FD4AB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42B3CF50237EAAE1003FD4AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42B3CF51237EAAE1003FD4AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42B3CF53237EAAE1003FD4AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3W953ED69;
+				INFOPLIST_FILE = KanAR/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kinwalam.KanAR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42B3CF54237EAAE1003FD4AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3W953ED69;
+				INFOPLIST_FILE = KanAR/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kinwalam.KanAR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42B3CF56237EAAE1003FD4AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3W953ED69;
+				INFOPLIST_FILE = KanARTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kinwalam.KanARTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KanAR.app/KanAR";
+			};
+			name = Debug;
+		};
+		42B3CF57237EAAE1003FD4AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3W953ED69;
+				INFOPLIST_FILE = KanARTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kinwalam.KanARTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KanAR.app/KanAR";
+			};
+			name = Release;
+		};
+		42B3CF59237EAAE1003FD4AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3W953ED69;
+				INFOPLIST_FILE = KanARUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kinwalam.KanARUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KanAR;
+			};
+			name = Debug;
+		};
+		42B3CF5A237EAAE1003FD4AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R3W953ED69;
+				INFOPLIST_FILE = KanARUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kinwalam.KanARUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KanAR;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42B3CF23237EAADE003FD4AB /* Build configuration list for PBXProject "KanAR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42B3CF50237EAAE1003FD4AB /* Debug */,
+				42B3CF51237EAAE1003FD4AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42B3CF52237EAAE1003FD4AB /* Build configuration list for PBXNativeTarget "KanAR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42B3CF53237EAAE1003FD4AB /* Debug */,
+				42B3CF54237EAAE1003FD4AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42B3CF55237EAAE1003FD4AB /* Build configuration list for PBXNativeTarget "KanARTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42B3CF56237EAAE1003FD4AB /* Debug */,
+				42B3CF57237EAAE1003FD4AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42B3CF58237EAAE1003FD4AB /* Build configuration list for PBXNativeTarget "KanARUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42B3CF59237EAAE1003FD4AB /* Debug */,
+				42B3CF5A237EAAE1003FD4AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42B3CF20237EAADE003FD4AB /* Project object */;
+}
