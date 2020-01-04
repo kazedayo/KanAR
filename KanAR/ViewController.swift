@@ -10,9 +10,11 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    
+    let updateQueue = DispatchQueue(label: "\(Bundle.main.bundleIdentifier!).serialSCNQueue")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,21 +25,25 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        sceneView.scene = scene
+        //Enable environment-based lighting
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.automaticallyUpdatesLighting = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        guard let refImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main) else {
+            fatalError("Missing expected asset catalog resources.")
+        }
+        
         // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
+        let configuration = ARImageTrackingConfiguration()
+        configuration.trackingImages = refImages
+        configuration.maximumNumberOfTrackedImages = 1
 
         // Run the view's session
-        sceneView.session.run(configuration)
+        sceneView.session.run(configuration, options: ARSession.RunOptions(arrayLiteral: .resetTracking, .removeExistingAnchors))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -58,6 +64,88 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 */
     
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard let imageAnchor = anchor as? ARImageAnchor else { return }
+        
+        updateQueue.async {
+            let physicalWidth = imageAnchor.referenceImage.physicalSize.width
+            let physicalHeight = imageAnchor.referenceImage.physicalSize.height
+            
+            let mainPlane = SCNPlane(width: physicalWidth, height: physicalHeight)
+            
+            mainPlane.firstMaterial?.colorBufferWriteMask = .alpha
+            
+            let mainNode = SCNNode(geometry: mainPlane)
+            mainNode.eulerAngles.x = -.pi / 2
+            mainNode.renderingOrder = -1
+            mainNode.opacity = 1
+            
+            print("deteced image")
+            
+            node.addChildNode(mainNode)
+            
+            self.highlightDetection(on: mainNode, width: physicalWidth, height: physicalHeight, completionHandler: {
+                self.displayWebView(on: mainNode, width: physicalWidth, height: physicalHeight)
+            })
+            
+        }
+    }
+    
+    func highlightDetection(on rootNode: SCNNode, width: CGFloat, height: CGFloat, completionHandler block: @escaping (() -> Void)) {
+        let planeNode = SCNNode(geometry: SCNPlane(width: width, height: height))
+        planeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.white
+        planeNode.position.z += 0.1
+        planeNode.opacity = 0
+        
+        rootNode.addChildNode(planeNode)
+        planeNode.runAction(self.imageHighlightAction) {
+            block()
+        }
+    }
+    
+    func displayWebView(on rootNode: SCNNode, width: CGFloat, height: CGFloat) {
+        // Xcode yells at us about the deprecation of UIWebView in iOS 12.0, but there is currently
+        // a bug that does now allow us to use a WKWebView as a texture for our webViewNode
+        // Note that UIWebViews should only be instantiated on the main thread!
+        DispatchQueue.main.async {
+            let path = Bundle.main.path(forResource: "12354", ofType: "svg", inDirectory: "svgsKana")
+            let pathURL = URL(fileURLWithPath: path!)
+            let request = URLRequest(url: pathURL)
+            let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 500))
+            webView.delegate = self
+            webView.scalesPageToFit = false
+            webView.loadRequest(request)
+                        
+            let webViewPlane = SCNPlane(width: width, height: height)
+            //webViewPlane.cornerRadius = 0.25
+            
+            let webViewNode = SCNNode(geometry: webViewPlane)
+            webViewNode.geometry?.firstMaterial?.diffuse.contents = webView
+            webViewNode.position.z = 0.5
+            webViewNode.opacity = 0
+            
+            rootNode.addChildNode(webViewNode)
+            webViewNode.runAction(.sequence([
+                //.wait(duration: 3.0),
+                .fadeOpacity(to: 1.0, duration: 0.5),
+                //.moveBy(x: xOffset * 1.1, y: 0, z: -0.05, duration: 1),
+                //.moveBy(x: 0, y: 0, z: -0.05, duration: 0.2)
+                ])
+            )
+        }
+    }
+    
+    var imageHighlightAction: SCNAction {
+        return .sequence([
+            .wait(duration: 0.25),
+            .fadeOpacity(to: 0.85, duration: 0.25),
+            .fadeOpacity(to: 0.15, duration: 0.25),
+            .fadeOpacity(to: 0.85, duration: 0.25),
+            .fadeOut(duration: 0.5),
+            .removeFromParentNode()
+            ])
+    }
+    
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         
@@ -71,5 +159,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        let contentSize = webView.scrollView.contentSize
+        let webViewSize = webView.bounds.size
+        let scaleFactor = webViewSize.width / contentSize.width
+
+        webView.scrollView.minimumZoomScale = scaleFactor
+        webView.scrollView.maximumZoomScale = scaleFactor
+        webView.scrollView.zoomScale = scaleFactor
     }
 }
