@@ -26,6 +26,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         return children.lazy.compactMap({ $0 as? StatusViewController }).first!
     }()
     
+    var kanaSet = ["Mutsu":"12416","Naganami":"12394","Takao":"12383"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,17 +49,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let refImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main) else {
-            fatalError("Missing expected asset catalog resources.")
-        }
-        
-        // Create a session configuration
-        let configuration = ARImageTrackingConfiguration()
-        configuration.trackingImages = refImages
-        configuration.maximumNumberOfTrackedImages = 1
-
-        // Run the view's session
-        sceneView.session.run(configuration, options: ARSession.RunOptions(arrayLiteral: .resetTracking, .removeExistingAnchors))
+        resetTracking()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -94,7 +86,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         // Run the view's session
         sceneView.session.run(configuration, options: ARSession.RunOptions(arrayLiteral: .resetTracking, .removeExistingAnchors))
 
-        statusViewController.scheduleMessage("Look around to detect images", inSeconds: 7.5, messageType: .contentPlacement)
+        statusViewController.scheduleMessage("Look around to detect images", inSeconds: 3, messageType: .contentPlacement)
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
@@ -114,12 +106,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
             mainNode.renderingOrder = -1
             mainNode.opacity = 1
             
-            print("deteced image")
-            
             node.addChildNode(mainNode)
             
             self.highlightDetection(on: mainNode, width: physicalWidth, height: physicalHeight, completionHandler: {
-                self.displayWebView(on: mainNode, width: physicalWidth, height: physicalHeight)
+                self.displayWebView(on: mainNode, width: physicalWidth, height: physicalHeight, imageName: referenceImage.name!)
             })
             
         }
@@ -143,18 +133,21 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         }
     }
     
-    func displayWebView(on rootNode: SCNNode, width: CGFloat, height: CGFloat) {
+    func displayWebView(on rootNode: SCNNode, width: CGFloat, height: CGFloat, imageName: String) {
         // Xcode yells at us about the deprecation of UIWebView in iOS 12.0, but there is currently
         // a bug that does now allow us to use a WKWebView as a texture for our webViewNode
         // Note that UIWebViews should only be instantiated on the main thread!
         DispatchQueue.main.async {
-            let path = Bundle.main.path(forResource: "12354", ofType: "svg", inDirectory: "svgsKana")
+            let path = Bundle.main.path(forResource: self.kanaSet[imageName], ofType: "svg", inDirectory: "svgsKana")
             let pathURL = URL(fileURLWithPath: path!)
             let request = URLRequest(url: pathURL)
-            let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 375))
+            print(width)
+            print(height)
+            let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: width * 100, height: height * 100))
             webView.delegate = self
             webView.clipsToBounds = false
             webView.scrollView.contentInset = UIEdgeInsets(top: -self.sceneView.safeAreaInsets.top, left: 0, bottom: -self.sceneView.safeAreaInsets.bottom, right: 0)
+            webView.isUserInteractionEnabled = false
             webView.loadRequest(request)
                         
             let webViewPlane = SCNPlane(width: width, height: height)
@@ -162,7 +155,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
             
             let webViewNode = SCNNode(geometry: webViewPlane)
             webViewNode.geometry?.firstMaterial?.diffuse.contents = webView
-            webViewNode.position.z = 0.2
+            webViewNode.position.z = 0.01
             webViewNode.opacity = 0
             
             rootNode.addChildNode(webViewNode)
