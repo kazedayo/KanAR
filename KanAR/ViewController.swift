@@ -14,13 +14,24 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    @IBOutlet weak var blurView: UIVisualEffectView!
+    
     let updateQueue = DispatchQueue(label: "\(Bundle.main.bundleIdentifier!).serialSCNQueue")
+    
+    var session: ARSession {
+        return sceneView.session
+    }
+    
+    lazy var statusViewController: StatusViewController = {
+        return children.lazy.compactMap({ $0 as? StatusViewController }).first!
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the view's delegate
         sceneView.delegate = self
+        sceneView.session.delegate = self
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
@@ -28,6 +39,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         //Enable environment-based lighting
         sceneView.autoenablesDefaultLighting = true
         sceneView.automaticallyUpdatesLighting = true
+        statusViewController.restartExperienceHandler = { [unowned self] in
+            self.restartExperience()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,9 +77,29 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         return node
     }
 */
+  
+    var isRestartAvailable = true
+    
+    func resetTracking() {
+        
+        guard let refImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main) else {
+            fatalError("Missing expected asset catalog resources.")
+        }
+        
+        // Create a session configuration
+        let configuration = ARImageTrackingConfiguration()
+        configuration.trackingImages = refImages
+        configuration.maximumNumberOfTrackedImages = 1
+
+        // Run the view's session
+        sceneView.session.run(configuration, options: ARSession.RunOptions(arrayLiteral: .resetTracking, .removeExistingAnchors))
+
+        statusViewController.scheduleMessage("Look around to detect images", inSeconds: 7.5, messageType: .contentPlacement)
+    }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let imageAnchor = anchor as? ARImageAnchor else { return }
+        let referenceImage = imageAnchor.referenceImage
         
         updateQueue.async {
             let physicalWidth = imageAnchor.referenceImage.physicalSize.width
@@ -89,6 +123,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
             })
             
         }
+        
+        DispatchQueue.main.async {
+            let imageName = referenceImage.name ?? ""
+            self.statusViewController.cancelAllScheduledMessages()
+            self.statusViewController.showMessage("Detected image “\(imageName)”")
+        }
     }
     
     func highlightDetection(on rootNode: SCNNode, width: CGFloat, height: CGFloat, completionHandler block: @escaping (() -> Void)) {
@@ -111,9 +151,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
             let path = Bundle.main.path(forResource: "12354", ofType: "svg", inDirectory: "svgsKana")
             let pathURL = URL(fileURLWithPath: path!)
             let request = URLRequest(url: pathURL)
-            let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 500))
+            let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 500, height: 375))
             webView.delegate = self
-            webView.scalesPageToFit = false
+            webView.clipsToBounds = false
+            webView.scrollView.contentInset = UIEdgeInsets(top: -self.sceneView.safeAreaInsets.top, left: 0, bottom: -self.sceneView.safeAreaInsets.bottom, right: 0)
             webView.loadRequest(request)
                         
             let webViewPlane = SCNPlane(width: width, height: height)
@@ -121,7 +162,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
             
             let webViewNode = SCNNode(geometry: webViewPlane)
             webViewNode.geometry?.firstMaterial?.diffuse.contents = webView
-            webViewNode.position.z = 0.5
+            webViewNode.position.z = 0.2
             webViewNode.opacity = 0
             
             rootNode.addChildNode(webViewNode)
@@ -144,21 +185,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
             .fadeOut(duration: 0.5),
             .removeFromParentNode()
             ])
-    }
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

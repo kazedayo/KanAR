@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		426AAFD923BDD3CA001ECF4B /* svgsKana in Resources */ = {isa = PBXBuildFile; fileRef = 426AAFD823BDD3CA001ECF4B /* svgsKana */; };
+		426AAFDD23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AAFDC23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift */; };
+		426AAFDF23C1A751001ECF4B /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AAFDE23C1A751001ECF4B /* StatusViewController.swift */; };
 		42B3CF2C237EAADE003FD4AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF2B237EAADE003FD4AB /* AppDelegate.swift */; };
 		42B3CF30237EAADE003FD4AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF2F237EAADE003FD4AB /* ViewController.swift */; };
 		42B3CF33237EAADE003FD4AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B3CF31237EAADE003FD4AB /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		426AAFD823BDD3CA001ECF4B /* svgsKana */ = {isa = PBXFileReference; lastKnownFileType = folder; path = svgsKana; sourceTree = "<group>"; };
+		426AAFDC23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSessionDelegate.swift"; sourceTree = "<group>"; };
+		426AAFDE23C1A751001ECF4B /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		42B3CF28237EAADE003FD4AB /* KanAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B3CF2B237EAADE003FD4AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42B3CF2F237EAADE003FD4AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +105,9 @@
 			children = (
 				42B3CF2B237EAADE003FD4AB /* AppDelegate.swift */,
 				42B3CF2F237EAADE003FD4AB /* ViewController.swift */,
+				426AAFDE23C1A751001ECF4B /* StatusViewController.swift */,
 				42B3CF31237EAADE003FD4AB /* Main.storyboard */,
+				426AAFDC23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift */,
 				42B3CF34237EAAE1003FD4AB /* Assets.xcassets */,
 				426AAFD823BDD3CA001ECF4B /* svgsKana */,
 				42B3CF36237EAAE1003FD4AB /* LaunchScreen.storyboard */,
@@ -260,6 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426AAFDF23C1A751001ECF4B /* StatusViewController.swift in Sources */,
+				426AAFDD23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift in Sources */,
 				42B3CF30237EAADE003FD4AB /* ViewController.swift in Sources */,
 				42B3CF2C237EAADE003FD4AB /* AppDelegate.swift in Sources */,
 			);
@@ -437,6 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R3W953ED69;
 				INFOPLIST_FILE = KanAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R3W953ED69;
 				INFOPLIST_FILE = KanAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
