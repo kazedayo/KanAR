@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +19,7 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arscnView>
-                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPk-E1-DgC">
+                            <visualEffectView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPk-E1-DgC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xdk-Ds-fJ1">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -39,10 +40,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="HPk-E1-DgC" secondAttribute="trailing" id="2Ba-7f-z73"/>
-                            <constraint firstItem="HPk-E1-DgC" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="31Y-Xp-8JB"/>
+                            <constraint firstItem="HPk-E1-DgC" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="31Y-Xp-8JB"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
-                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="HPk-E1-DgC" secondAttribute="bottom" id="QL1-lF-lpr"/>
-                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
+                            <constraint firstAttribute="bottom" secondItem="HPk-E1-DgC" secondAttribute="bottom" id="QL1-lF-lpr"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="U0K-SW-4ec" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="O4e-CK-MJ6" secondAttribute="trailing" id="aeo-Sd-GKS"/>
                             <constraint firstItem="O4e-CK-MJ6" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="bS7-7i-5nx"/>

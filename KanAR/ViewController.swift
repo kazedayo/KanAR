@@ -82,6 +82,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         let configuration = ARImageTrackingConfiguration()
         configuration.trackingImages = refImages
         configuration.maximumNumberOfTrackedImages = 1
+        //people occluding
+        if #available(iOS 13.0, *), ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
+            configuration.frameSemantics.insert(.personSegmentationWithDepth)
+        } else {
+            // Fallback on earlier versions
+        }
 
         // Run the view's session
         sceneView.session.run(configuration, options: ARSession.RunOptions(arrayLiteral: .resetTracking, .removeExistingAnchors))
@@ -121,6 +127,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         }
     }
     
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        DispatchQueue.main.async {
+            guard let imageAnchor = anchor as? ARImageAnchor else { return }
+            let referenceImage = imageAnchor.referenceImage
+            let imageName = referenceImage.name ?? ""
+            self.statusViewController.cancelAllScheduledMessages()
+            self.statusViewController.showMessage("Detected image “\(imageName)”")
+        }
+    }
+    
     func highlightDetection(on rootNode: SCNNode, width: CGFloat, height: CGFloat, completionHandler block: @escaping (() -> Void)) {
         let planeNode = SCNNode(geometry: SCNPlane(width: width, height: height))
         planeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.white
@@ -138,11 +154,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         // a bug that does now allow us to use a WKWebView as a texture for our webViewNode
         // Note that UIWebViews should only be instantiated on the main thread!
         DispatchQueue.main.async {
-            let path = Bundle.main.path(forResource: self.kanaSet[imageName], ofType: "svg", inDirectory: "svgsKana")
-            let pathURL = URL(fileURLWithPath: path!)
-            let request = URLRequest(url: pathURL)
-            print(width)
-            print(height)
+            let pathURL = Bundle.main.url(forResource: self.kanaSet[imageName], withExtension: "svg", subdirectory: "svgsKana")
+            let request = URLRequest(url: pathURL!)
             let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: width * 100, height: height * 100))
             webView.delegate = self
             webView.clipsToBounds = false
@@ -188,5 +201,16 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         webView.scrollView.minimumZoomScale = scaleFactor
         webView.scrollView.maximumZoomScale = scaleFactor
         webView.scrollView.zoomScale = scaleFactor
+    }
+    
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
+        //Inject JS
+        let asvgPath = Bundle.main.path(forResource: "asvg", ofType: "js")
+        let asvgjs = try! String(contentsOfFile: asvgPath!)
+        webView.stringByEvaluatingJavaScript(from: asvgjs)
+        let infinitePath = Bundle.main.path(forResource: "infinite", ofType: "js")
+        let infinitejs = try! String(contentsOfFile: infinitePath!)
+        webView.stringByEvaluatingJavaScript(from: infinitejs)
+        return true
     }
 }

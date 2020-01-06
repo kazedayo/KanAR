@@ -10,6 +10,8 @@
 		426AAFD923BDD3CA001ECF4B /* svgsKana in Resources */ = {isa = PBXBuildFile; fileRef = 426AAFD823BDD3CA001ECF4B /* svgsKana */; };
 		426AAFDD23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AAFDC23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift */; };
 		426AAFDF23C1A751001ECF4B /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AAFDE23C1A751001ECF4B /* StatusViewController.swift */; };
+		426AAFE123C2138B001ECF4B /* infinite.js in Resources */ = {isa = PBXBuildFile; fileRef = 426AAFE023C2138B001ECF4B /* infinite.js */; };
+		426AAFE323C22A40001ECF4B /* asvg.js in Resources */ = {isa = PBXBuildFile; fileRef = 426AAFE223C22A40001ECF4B /* asvg.js */; };
 		42B3CF2C237EAADE003FD4AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF2B237EAADE003FD4AB /* AppDelegate.swift */; };
 		42B3CF30237EAADE003FD4AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF2F237EAADE003FD4AB /* ViewController.swift */; };
 		42B3CF33237EAADE003FD4AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B3CF31237EAADE003FD4AB /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		426AAFD823BDD3CA001ECF4B /* svgsKana */ = {isa = PBXFileReference; lastKnownFileType = folder; path = svgsKana; sourceTree = "<group>"; };
 		426AAFDC23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSessionDelegate.swift"; sourceTree = "<group>"; };
 		426AAFDE23C1A751001ECF4B /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		426AAFE023C2138B001ECF4B /* infinite.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = infinite.js; sourceTree = "<group>"; };
+		426AAFE223C22A40001ECF4B /* asvg.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = asvg.js; sourceTree = "<group>"; };
 		42B3CF28237EAADE003FD4AB /* KanAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B3CF2B237EAADE003FD4AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42B3CF2F237EAADE003FD4AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 				426AAFDE23C1A751001ECF4B /* StatusViewController.swift */,
 				42B3CF31237EAADE003FD4AB /* Main.storyboard */,
 				426AAFDC23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift */,
+				426AAFE023C2138B001ECF4B /* infinite.js */,
+				426AAFE223C22A40001ECF4B /* asvg.js */,
 				42B3CF34237EAAE1003FD4AB /* Assets.xcassets */,
 				426AAFD823BDD3CA001ECF4B /* svgsKana */,
 				42B3CF36237EAAE1003FD4AB /* LaunchScreen.storyboard */,
@@ -239,7 +245,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				42B3CF38237EAAE1003FD4AB /* LaunchScreen.storyboard in Resources */,
+				426AAFE123C2138B001ECF4B /* infinite.js in Resources */,
 				42B3CF35237EAAE1003FD4AB /* Assets.xcassets in Resources */,
+				426AAFE323C22A40001ECF4B /* asvg.js in Resources */,
 				426AAFD923BDD3CA001ECF4B /* svgsKana in Resources */,
 				42B3CF33237EAADE003FD4AB /* Main.storyboard in Resources */,
 			);
