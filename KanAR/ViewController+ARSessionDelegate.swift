@@ -84,6 +84,7 @@ extension ViewController: ARSessionDelegate {
         isRestartAvailable = false
         
         statusViewController.cancelAllScheduledMessages()
+        kanaInfoViewController.setViewHidden(true)
         
         resetTracking()
         

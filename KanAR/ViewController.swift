@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
@@ -26,7 +26,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         return children.lazy.compactMap({ $0 as? StatusViewController }).first!
     }()
     
+    lazy var kanaInfoViewController: KanaInfoViewController = {
+        return children.lazy.compactMap({ $0 as? KanaInfoViewController }).last!
+    }()
+    
     var kanaSet = ["Mutsu":"12416","Naganami":"12394","Takao":"12383"]
+    
+    var currentCard = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +40,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         sceneView.session.delegate = self
-        
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
         
         //Enable environment-based lighting
         sceneView.autoenablesDefaultLighting = true
@@ -98,6 +101,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let imageAnchor = anchor as? ARImageAnchor else { return }
         let referenceImage = imageAnchor.referenceImage
+        let imageName = referenceImage.name ?? ""
         
         updateQueue.async {
             let physicalWidth = imageAnchor.referenceImage.physicalSize.width
@@ -121,19 +125,27 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
         }
         
         DispatchQueue.main.async {
-            let imageName = referenceImage.name ?? ""
+            self.currentCard = imageName
             self.statusViewController.cancelAllScheduledMessages()
             self.statusViewController.showMessage("Detected image “\(imageName)”")
+            self.kanaInfoViewController.setInfo(key: imageName)
+            self.kanaInfoViewController.setViewHidden(false)
         }
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        DispatchQueue.main.async {
-            guard let imageAnchor = anchor as? ARImageAnchor else { return }
-            let referenceImage = imageAnchor.referenceImage
-            let imageName = referenceImage.name ?? ""
-            self.statusViewController.cancelAllScheduledMessages()
-            self.statusViewController.showMessage("Detected image “\(imageName)”")
+        guard let imageAnchor = anchor as? ARImageAnchor else { return }
+        let referenceImage = imageAnchor.referenceImage
+        let imageName = referenceImage.name ?? ""
+        
+        if (currentCard != imageName) {
+            DispatchQueue.main.async {
+                self.currentCard = imageName
+                self.statusViewController.cancelAllScheduledMessages()
+                self.statusViewController.showMessage("Detected image “\(imageName)”")
+                self.kanaInfoViewController.setInfo(key: imageName)
+                self.kanaInfoViewController.setViewHidden(false)
+            }
         }
     }
     
@@ -191,26 +203,5 @@ class ViewController: UIViewController, ARSCNViewDelegate, UIWebViewDelegate {
             .fadeOut(duration: 0.5),
             .removeFromParentNode()
             ])
-    }
-    
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        let contentSize = webView.scrollView.contentSize
-        let webViewSize = webView.bounds.size
-        let scaleFactor = webViewSize.width / contentSize.width
-
-        webView.scrollView.minimumZoomScale = scaleFactor
-        webView.scrollView.maximumZoomScale = scaleFactor
-        webView.scrollView.zoomScale = scaleFactor
-    }
-    
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
-        //Inject JS
-        let asvgPath = Bundle.main.path(forResource: "asvg", ofType: "js")
-        let asvgjs = try! String(contentsOfFile: asvgPath!)
-        webView.stringByEvaluatingJavaScript(from: asvgjs)
-        let infinitePath = Bundle.main.path(forResource: "infinite", ofType: "js")
-        let infinitejs = try! String(contentsOfFile: infinitePath!)
-        webView.stringByEvaluatingJavaScript(from: infinitejs)
-        return true
     }
 }
