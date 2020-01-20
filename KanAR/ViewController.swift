@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import SwiftyJSON
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
@@ -30,7 +31,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         return children.lazy.compactMap({ $0 as? KanaInfoViewController }).last!
     }()
     
-    var kanaSet = ["Mutsu":"12416","Naganami":"12394","Takao":"12383"]
+    var kanaData: JSON = []
     
     var currentCard = ""
     
@@ -80,6 +81,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         guard let refImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main) else {
             fatalError("Missing expected asset catalog resources.")
         }
+        
+        //load KanaData.json
+        let path = Bundle.main.path(forResource: "KanaData", ofType: "json")
+        let jsonString = try! String(contentsOfFile: path!, encoding: .utf8)
+        kanaData = JSON(parseJSON: jsonString)
         
         // Create a session configuration
         let configuration = ARImageTrackingConfiguration()
@@ -162,11 +168,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     func displayWebView(on rootNode: SCNNode, width: CGFloat, height: CGFloat, imageName: String) {
-        // Xcode yells at us about the deprecation of UIWebView in iOS 12.0, but there is currently
-        // a bug that does now allow us to use a WKWebView as a texture for our webViewNode
-        // Note that UIWebViews should only be instantiated on the main thread!
         DispatchQueue.main.async {
-            let pathURL = Bundle.main.url(forResource: self.kanaSet[imageName], withExtension: "svg", subdirectory: "svgsKana")
+            //find JSON Object correspond to the detected image
+            var svgName = ""
+            for (_,object) in self.kanaData["Kana"] {
+                if (object["name"].stringValue == imageName) {
+                    svgName = object["svg"].stringValue
+                }
+            }
+            let pathURL = Bundle.main.url(forResource: svgName, withExtension: "svg", subdirectory: "svgsKana")
             let request = URLRequest(url: pathURL!)
             let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: width * 100, height: height * 100))
             webView.delegate = self
@@ -184,13 +194,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             webViewNode.opacity = 0
             
             rootNode.addChildNode(webViewNode)
-            webViewNode.runAction(.sequence([
-                //.wait(duration: 3.0),
-                .fadeOpacity(to: 1.0, duration: 0.5),
-                //.moveBy(x: xOffset * 1.1, y: 0, z: -0.05, duration: 1),
-                //.moveBy(x: 0, y: 0, z: -0.05, duration: 0.2)
-                ])
-            )
+            webViewNode.runAction(.fadeOpacity(to: 1.0, duration: 0.5))
         }
     }
     

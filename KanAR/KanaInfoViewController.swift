@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class KanaInfoViewController: UIViewController {
     
     @IBOutlet weak var kanaLabel: UILabel!
     @IBOutlet weak var kanaDescriptionLabel: UILabel!
     
-    var kanaSet = ["Mutsu":["む","Hiragana character 'Mu'"],"Naganami":["な","Hiragana character 'Na'"],"Takao":["た","Hiragana character 'Ta'"]]
+    var kanaData: JSON = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //load KanaData.json
+        let path = Bundle.main.path(forResource: "KanaData", ofType: "json")
+        let jsonString = try! String(contentsOfFile: path!, encoding: .utf8)
+        kanaData = JSON(parseJSON: jsonString)
     }
     
 
@@ -34,8 +39,17 @@ class KanaInfoViewController: UIViewController {
     
     //MARK: Update View Text Lables
     func setInfo(key: String) {
-        kanaLabel.text = kanaSet[key]![0]
-        kanaDescriptionLabel.text = kanaSet[key]![1]
+        //get data from JSON
+        var character = ""
+        var description = ""
+        for (_,object) in kanaData["Kana"] {
+            if (object["name"].stringValue == key) {
+                character = object["char"].stringValue
+                description = object["desc"].stringValue
+            }
+        }
+        kanaLabel.text = character
+        kanaDescriptionLabel.text = description
         view.layoutIfNeeded()
     }
     

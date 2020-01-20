@@ -85,13 +85,13 @@
                             <visualEffectView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="idu-oL-tWv" userLabel="Message Panel">
                                 <rect key="frame" x="16" y="20" width="125" height="31.666666666666671"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qqe-8Z-gQP">
-                                    <rect key="frame" x="0.0" y="0.0" width="125" height="31.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="125" height="32"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LV4-w6-ioF">
-                                            <rect key="frame" x="0.0" y="0.0" width="125" height="31.333333333333332"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="31.666666666666668"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Bs1-sb-Nsp">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="31.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" text="Tracking status" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cct-Mf-EmZ" userLabel="Messages label">
@@ -136,8 +136,10 @@
                                     <constraint firstAttribute="height" constant="59" id="f4Q-zn-xNu"/>
                                     <constraint firstAttribute="width" constant="44" id="fdb-GU-8EK"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="12"/>
-                                <state key="normal" image="restart"/>
+                                <state key="normal" image="arrow.clockwise" catalog="system"/>
                                 <state key="selected" image="restartPressed"/>
                                 <state key="highlighted" image="restartPressed"/>
                                 <connections>
@@ -229,6 +231,7 @@
                             <constraint firstItem="cD6-Td-0t3" firstAttribute="leading" secondItem="kM1-tf-3dx" secondAttribute="leading" id="UWz-Gq-yt0"/>
                             <constraint firstAttribute="trailing" secondItem="cD6-Td-0t3" secondAttribute="trailing" id="uG9-cj-5RK"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mzf-gC-JSZ"/>
                     </view>
                     <connections>
                         <outlet property="kanaDescriptionLabel" destination="fN5-1a-ofW" id="act-FD-DIG"/>
@@ -241,7 +244,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="restart" width="20" height="20"/>
+        <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
         <image name="restartPressed" width="20" height="20"/>
     </resources>
 </document>

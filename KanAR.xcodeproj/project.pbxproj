@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42019DA223D060600044E44B /* KanaInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42019DA123D060600044E44B /* KanaInfoViewController.swift */; };
+		42622D7F23D5ACDE0087D910 /* KanaData.json in Resources */ = {isa = PBXBuildFile; fileRef = 42622D7E23D5ACDE0087D910 /* KanaData.json */; };
 		4267419523C32A5600776B56 /* ViewController+UIWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267419423C32A5600776B56 /* ViewController+UIWebViewDelegate.swift */; };
 		426AAFD923BDD3CA001ECF4B /* svgsKana in Resources */ = {isa = PBXBuildFile; fileRef = 426AAFD823BDD3CA001ECF4B /* svgsKana */; };
 		426AAFDD23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AAFDC23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift */; };
@@ -21,6 +22,9 @@
 		42B3CF38237EAAE1003FD4AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B3CF36237EAAE1003FD4AB /* LaunchScreen.storyboard */; };
 		42B3CF43237EAAE1003FD4AB /* KanARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF42237EAAE1003FD4AB /* KanARTests.swift */; };
 		42B3CF4E237EAAE1003FD4AB /* KanARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF4D237EAAE1003FD4AB /* KanARUITests.swift */; };
+		4ABC89B8A75E99550ED79EDA /* Pods_KanAR_KanARUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FBE25FBC39FF4819257893 /* Pods_KanAR_KanARUITests.framework */; };
+		CA9605C2AC84774A8B6FAC97 /* Pods_KanARTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0FA1103DC8482D532843F8 /* Pods_KanARTests.framework */; };
+		DB61995ADFA0F7167ECE9330 /* Pods_KanAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138C6BF649091DC7985273A3 /* Pods_KanAR.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		138C6BF649091DC7985273A3 /* Pods_KanAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BDE69A4571DBE91ADD51C2 /* Pods-KanAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanAR.debug.xcconfig"; path = "Target Support Files/Pods-KanAR/Pods-KanAR.debug.xcconfig"; sourceTree = "<group>"; };
+		34045A35396B61B7F8FE6FC0 /* Pods-KanARTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanARTests.debug.xcconfig"; path = "Target Support Files/Pods-KanARTests/Pods-KanARTests.debug.xcconfig"; sourceTree = "<group>"; };
 		42019DA123D060600044E44B /* KanaInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaInfoViewController.swift; sourceTree = "<group>"; };
+		42622D7E23D5ACDE0087D910 /* KanaData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KanaData.json; sourceTree = "<group>"; };
 		4267419423C32A5600776B56 /* ViewController+UIWebViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UIWebViewDelegate.swift"; sourceTree = "<group>"; };
 		426AAFD823BDD3CA001ECF4B /* svgsKana */ = {isa = PBXFileReference; lastKnownFileType = folder; path = svgsKana; sourceTree = "<group>"; };
 		426AAFDC23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSessionDelegate.swift"; sourceTree = "<group>"; };
@@ -61,6 +69,12 @@
 		42B3CF49237EAAE1003FD4AB /* KanARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B3CF4D237EAAE1003FD4AB /* KanARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanARUITests.swift; sourceTree = "<group>"; };
 		42B3CF4F237EAAE1003FD4AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A0FA1103DC8482D532843F8 /* Pods_KanARTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanARTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		769AD9B2FB7022BAFAD88FCF /* Pods-KanAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanAR.release.xcconfig"; path = "Target Support Files/Pods-KanAR/Pods-KanAR.release.xcconfig"; sourceTree = "<group>"; };
+		817F3EA61AFCA08CC85626C8 /* Pods-KanAR-KanARUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanAR-KanARUITests.debug.xcconfig"; path = "Target Support Files/Pods-KanAR-KanARUITests/Pods-KanAR-KanARUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1FBE25FBC39FF4819257893 /* Pods_KanAR_KanARUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanAR_KanARUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E34080925C3278C568D11928 /* Pods-KanARTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanARTests.release.xcconfig"; path = "Target Support Files/Pods-KanARTests/Pods-KanARTests.release.xcconfig"; sourceTree = "<group>"; };
+		EA5CF1CAF3C6D73B668DE5D9 /* Pods-KanAR-KanARUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanAR-KanARUITests.release.xcconfig"; path = "Target Support Files/Pods-KanAR-KanARUITests/Pods-KanAR-KanARUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB61995ADFA0F7167ECE9330 /* Pods_KanAR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9605C2AC84774A8B6FAC97 /* Pods_KanARTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +98,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ABC89B8A75E99550ED79EDA /* Pods_KanAR_KanARUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E69ED96E3485699B0CA79CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18BDE69A4571DBE91ADD51C2 /* Pods-KanAR.debug.xcconfig */,
+				769AD9B2FB7022BAFAD88FCF /* Pods-KanAR.release.xcconfig */,
+				817F3EA61AFCA08CC85626C8 /* Pods-KanAR-KanARUITests.debug.xcconfig */,
+				EA5CF1CAF3C6D73B668DE5D9 /* Pods-KanAR-KanARUITests.release.xcconfig */,
+				34045A35396B61B7F8FE6FC0 /* Pods-KanARTests.debug.xcconfig */,
+				E34080925C3278C568D11928 /* Pods-KanARTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		42B3CF1F237EAADE003FD4AB = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +126,8 @@
 				42B3CF41237EAAE1003FD4AB /* KanARTests */,
 				42B3CF4C237EAAE1003FD4AB /* KanARUITests */,
 				42B3CF29237EAADE003FD4AB /* Products */,
+				0E69ED96E3485699B0CA79CA /* Pods */,
+				F7B15ADEC14EF4F84D9942FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +153,7 @@
 				42019DA123D060600044E44B /* KanaInfoViewController.swift */,
 				426AAFE023C2138B001ECF4B /* infinite.js */,
 				426AAFE223C22A40001ECF4B /* asvg.js */,
+				42622D7E23D5ACDE0087D910 /* KanaData.json */,
 				42B3CF34237EAAE1003FD4AB /* Assets.xcassets */,
 				426AAFD823BDD3CA001ECF4B /* svgsKana */,
 				42B3CF36237EAAE1003FD4AB /* LaunchScreen.storyboard */,
@@ -146,6 +180,16 @@
 			path = KanARUITests;
 			sourceTree = "<group>";
 		};
+		F7B15ADEC14EF4F84D9942FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				138C6BF649091DC7985273A3 /* Pods_KanAR.framework */,
+				E1FBE25FBC39FF4819257893 /* Pods_KanAR_KanARUITests.framework */,
+				6A0FA1103DC8482D532843F8 /* Pods_KanARTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42B3CF52237EAAE1003FD4AB /* Build configuration list for PBXNativeTarget "KanAR" */;
 			buildPhases = (
+				3059655CDE2ABD46BE366381 /* [CP] Check Pods Manifest.lock */,
 				42B3CF24237EAADE003FD4AB /* Sources */,
 				42B3CF25237EAADE003FD4AB /* Frameworks */,
 				42B3CF26237EAADE003FD4AB /* Resources */,
+				D7BC58863CA12E4A66BDDEC8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,6 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42B3CF55237EAAE1003FD4AB /* Build configuration list for PBXNativeTarget "KanARTests" */;
 			buildPhases = (
+				E9CD496B0BBE39E563327965 /* [CP] Check Pods Manifest.lock */,
 				42B3CF3A237EAAE1003FD4AB /* Sources */,
 				42B3CF3B237EAAE1003FD4AB /* Frameworks */,
 				42B3CF3C237EAAE1003FD4AB /* Resources */,
@@ -188,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42B3CF58237EAAE1003FD4AB /* Build configuration list for PBXNativeTarget "KanARUITests" */;
 			buildPhases = (
+				B15F49C518B307AD000FF29C /* [CP] Check Pods Manifest.lock */,
 				42B3CF45237EAAE1003FD4AB /* Sources */,
 				42B3CF46237EAAE1003FD4AB /* Frameworks */,
 				42B3CF47237EAAE1003FD4AB /* Resources */,
+				139980A07E5DF7D76F0B8139 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +305,7 @@
 				426AAFE323C22A40001ECF4B /* asvg.js in Resources */,
 				426AAFD923BDD3CA001ECF4B /* svgsKana in Resources */,
 				42B3CF33237EAADE003FD4AB /* Main.storyboard in Resources */,
+				42622D7F23D5ACDE0087D910 /* KanaData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +324,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		139980A07E5DF7D76F0B8139 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KanAR-KanARUITests/Pods-KanAR-KanARUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KanAR-KanARUITests/Pods-KanAR-KanARUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KanAR-KanARUITests/Pods-KanAR-KanARUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3059655CDE2ABD46BE366381 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KanAR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B15F49C518B307AD000FF29C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KanAR-KanARUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7BC58863CA12E4A66BDDEC8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KanAR/Pods-KanAR-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KanAR/Pods-KanAR-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KanAR/Pods-KanAR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9CD496B0BBE39E563327965 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KanARTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		42B3CF24237EAADE003FD4AB /* Sources */ = {
@@ -456,6 +609,7 @@
 		};
 		42B3CF53237EAAE1003FD4AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18BDE69A4571DBE91ADD51C2 /* Pods-KanAR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -475,6 +629,7 @@
 		};
 		42B3CF54237EAAE1003FD4AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 769AD9B2FB7022BAFAD88FCF /* Pods-KanAR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -494,6 +649,7 @@
 		};
 		42B3CF56237EAAE1003FD4AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34045A35396B61B7F8FE6FC0 /* Pods-KanARTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +672,7 @@
 		};
 		42B3CF57237EAAE1003FD4AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E34080925C3278C568D11928 /* Pods-KanARTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -538,6 +695,7 @@
 		};
 		42B3CF59237EAAE1003FD4AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 817F3EA61AFCA08CC85626C8 /* Pods-KanAR-KanARUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +716,7 @@
 		};
 		42B3CF5A237EAAE1003FD4AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA5CF1CAF3C6D73B668DE5D9 /* Pods-KanAR-KanARUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

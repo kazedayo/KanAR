@@ -1,0 +1,22 @@
+{
+    "Kana": [
+        {
+            "name":"Mutsu",
+            "svg":"12416",
+            "char":"む",
+            "desc":"Hiragana Character 'Mu'"
+        },
+        {
+            "name":"Naganami",
+            "svg":"12394",
+            "char":"な",
+            "desc":"Hiragana Character 'Na'"
+        },
+        {
+            "name":"Takao",
+            "svg":"12383",
+            "char":"た",
+            "desc":"Hiragana Character 'Ta'"
+        }
+    ]
+}
