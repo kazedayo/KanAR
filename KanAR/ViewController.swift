@@ -201,10 +201,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var imageHighlightAction: SCNAction {
         return .sequence([
             .wait(duration: 0.25),
-            .fadeOpacity(to: 0.85, duration: 0.25),
-            .fadeOpacity(to: 0.15, duration: 0.25),
-            .fadeOpacity(to: 0.85, duration: 0.25),
-            .fadeOut(duration: 0.5),
+            .fadeOpacity(to: 0.85, duration: 0.1),
+            .fadeOpacity(to: 0.15, duration: 0.1),
+            .fadeOpacity(to: 0.85, duration: 0.1),
+            .fadeOut(duration: 0.25),
             .removeFromParentNode()
             ])
     }
