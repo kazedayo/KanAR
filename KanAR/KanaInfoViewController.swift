@@ -26,17 +26,6 @@ class KanaInfoViewController: UIViewController {
         kanaData = JSON(parseJSON: jsonString)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     //MARK: Update View Text Lables
     func setInfo(key: String) {
         //get data from JSON
@@ -56,7 +45,11 @@ class KanaInfoViewController: UIViewController {
     //MARK: Show/Hide View w/ Animation
     
     func setViewHidden(_ hide:Bool) {
-        view.isHidden = false
+        if (hide == true) {
+            view.isHidden = true
+        } else {
+            view.isHidden = false
+        }
         UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
             self.view.alpha = hide ? 0 : 1
         }, completion: nil)

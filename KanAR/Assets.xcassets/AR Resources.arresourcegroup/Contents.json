@@ -5,6 +5,18 @@
   },
   "resources" : [
     {
+      "filename" : "HiraganaA.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaKi.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaO.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaSa.arreferenceimage"
+    },
+    {
       "filename" : "Mutsu.arreferenceimage"
     },
     {

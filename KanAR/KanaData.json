@@ -17,6 +17,30 @@
             "svg":"12383",
             "char":"た",
             "desc":"Hiragana Character 'Ta'"
+        },
+        {
+            "name":"HiraganaA",
+            "svg":"12354",
+            "char":"あ",
+            "desc":"Hiragana Character 'A'"
+        },
+        {
+            "name":"HiraganaO",
+            "svg":"12362",
+            "char":"お",
+            "desc":"Hiragana Character 'O'"
+        },
+        {
+            "name":"HiraganaSa",
+            "svg":"12373",
+            "char":"さ",
+            "desc":"Hiragana Character 'Sa'"
+        },
+        {
+            "name":"HiraganaKi",
+            "svg":"12365",
+            "char":"き",
+            "desc":"Hiragana Character 'Ki'"
         }
     ]
 }

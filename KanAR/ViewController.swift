@@ -28,7 +28,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }()
     
     lazy var kanaInfoViewController: KanaInfoViewController = {
-        return children.lazy.compactMap({ $0 as? KanaInfoViewController }).last!
+        return children.lazy.compactMap({ $0 as? KanaInfoViewController }).first!
+    }()
+    
+    lazy var canvasViewController: CanvasViewController = {
+        return children.lazy.compactMap({ $0 as? CanvasViewController }).first!
     }()
     
     var kanaData: JSON = []
@@ -41,7 +45,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         sceneView.session.delegate = self
-        
         //Enable environment-based lighting
         sceneView.autoenablesDefaultLighting = true
         sceneView.automaticallyUpdatesLighting = true
@@ -136,6 +139,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             self.statusViewController.showMessage("Detected image “\(imageName)”")
             self.kanaInfoViewController.setInfo(key: imageName)
             self.kanaInfoViewController.setViewHidden(false)
+            self.canvasViewController.currentCharacter = imageName
+            self.canvasViewController.setViewHidden(false)
         }
     }
     

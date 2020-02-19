@@ -85,6 +85,7 @@ extension ViewController: ARSessionDelegate {
         
         statusViewController.cancelAllScheduledMessages()
         kanaInfoViewController.setViewHidden(true)
+        canvasViewController.setViewHidden(true)
         
         resetTracking()
         
