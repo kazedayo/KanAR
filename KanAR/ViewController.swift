@@ -134,13 +134,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
         
         DispatchQueue.main.async {
-            self.currentCard = imageName
-            self.statusViewController.cancelAllScheduledMessages()
-            self.statusViewController.showMessage("Detected image “\(imageName)”")
-            self.kanaInfoViewController.setInfo(key: imageName)
-            self.kanaInfoViewController.setViewHidden(false)
-            self.canvasViewController.currentCharacter = imageName
-            self.canvasViewController.setViewHidden(false)
+            self.setupSubviews(imageName: imageName)
         }
     }
     
@@ -151,13 +145,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         if (currentCard != imageName) {
             DispatchQueue.main.async {
-                self.currentCard = imageName
-                self.statusViewController.cancelAllScheduledMessages()
-                self.statusViewController.showMessage("Detected image “\(imageName)”")
-                self.kanaInfoViewController.setInfo(key: imageName)
-                self.kanaInfoViewController.setViewHidden(false)
+                self.setupSubviews(imageName: imageName)
             }
         }
+    }
+    
+    func setupSubviews(imageName: String) {
+        currentCard = imageName
+        statusViewController.cancelAllScheduledMessages()
+        statusViewController.showMessage("Detected image “\(imageName)”")
+        kanaInfoViewController.setInfo(key: imageName)
+        kanaInfoViewController.setViewHidden(false)
+        for (_,object) in kanaData["Kana"] {
+            if (object["name"].stringValue == imageName) {
+                canvasViewController.currentCharacter = object["char"].stringValue
+                canvasViewController.characterType = object["type"].stringValue
+            }
+        }
+        canvasViewController.setViewHidden(false)
     }
     
     func highlightDetection(on rootNode: SCNNode, width: CGFloat, height: CGFloat, completionHandler block: @escaping (() -> Void)) {

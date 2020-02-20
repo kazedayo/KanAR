@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -98,41 +97,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="125" height="31.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LV4-w6-ioF">
-                                            <rect key="frame" x="0.0" y="0.0" width="125" height="31.333333333333332"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Bs1-sb-Nsp">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="31.333333333333332"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" text="Tracking status" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cct-Mf-EmZ" userLabel="Messages label">
-                                                        <rect key="frame" x="16" y="7.9999999999999991" width="93" height="15.666666666666664"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                        <nil key="textColor"/>
-                                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="shadowOffset" width="1" height="1"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="Cct-Mf-EmZ" firstAttribute="trailing" secondItem="Bs1-sb-Nsp" secondAttribute="trailing" constant="-16" id="Dkd-2q-cL4"/>
-                                                    <constraint firstItem="Cct-Mf-EmZ" firstAttribute="top" secondItem="Bs1-sb-Nsp" secondAttribute="top" constant="8" id="IPP-ri-0uy"/>
-                                                    <constraint firstItem="Cct-Mf-EmZ" firstAttribute="leading" secondItem="Bs1-sb-Nsp" secondAttribute="leading" constant="16" id="mnH-KP-QQa"/>
-                                                    <constraint firstItem="Cct-Mf-EmZ" firstAttribute="centerY" secondItem="Bs1-sb-Nsp" secondAttribute="centerY" id="xKc-S5-7ry"/>
-                                                </constraints>
-                                            </view>
-                                            <vibrancyEffect>
-                                                <blurEffect style="regular"/>
-                                            </vibrancyEffect>
-                                        </visualEffectView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="250" text="Tracking status" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cct-Mf-EmZ" userLabel="Messages label">
+                                            <rect key="frame" x="16" y="7.9999999999999991" width="93" height="15.666666666666664"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <nil key="textColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="LV4-w6-ioF" firstAttribute="top" secondItem="qqe-8Z-gQP" secondAttribute="top" id="94z-EN-KFS"/>
-                                        <constraint firstItem="LV4-w6-ioF" firstAttribute="leading" secondItem="qqe-8Z-gQP" secondAttribute="leading" id="Iuv-qb-4xm"/>
-                                        <constraint firstAttribute="trailing" secondItem="LV4-w6-ioF" secondAttribute="trailing" id="bPW-aZ-XsW"/>
+                                        <constraint firstItem="Cct-Mf-EmZ" firstAttribute="leading" secondItem="qqe-8Z-gQP" secondAttribute="leading" constant="16" id="GE2-7q-dBc"/>
+                                        <constraint firstAttribute="trailing" secondItem="Cct-Mf-EmZ" secondAttribute="trailing" constant="16" id="cgK-Ds-oDf"/>
+                                        <constraint firstItem="Cct-Mf-EmZ" firstAttribute="top" secondItem="qqe-8Z-gQP" secondAttribute="top" constant="8" id="mOd-94-WbV"/>
+                                        <constraint firstAttribute="bottom" secondItem="Cct-Mf-EmZ" secondAttribute="bottom" constant="8" id="ps7-zv-HX0"/>
                                     </constraints>
                                 </view>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Cct-Mf-EmZ" secondAttribute="bottom" constant="8" id="TjX-et-MyR"/>
-                                </constraints>
                                 <blurEffect style="regular"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -189,44 +168,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCg-FU-Erg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0d3-wc-cEe">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="007-W3-nGf">
-                                                        <rect key="frame" x="16" y="8" width="343" height="40.666666666666664"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN5-1a-ofW">
-                                                        <rect key="frame" x="16" y="56.666666666666657" width="343" height="21"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                        <nil key="textColor"/>
-                                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="007-W3-nGf" secondAttribute="trailing" constant="16" id="5dH-3o-k83"/>
-                                                    <constraint firstItem="fN5-1a-ofW" firstAttribute="leading" secondItem="0d3-wc-cEe" secondAttribute="leading" constant="16" id="Euy-wx-98i"/>
-                                                    <constraint firstItem="007-W3-nGf" firstAttribute="leading" secondItem="0d3-wc-cEe" secondAttribute="leading" constant="16" id="Nx1-cN-sSz"/>
-                                                    <constraint firstAttribute="trailing" secondItem="fN5-1a-ofW" secondAttribute="trailing" constant="16" id="W6B-w7-WIC"/>
-                                                    <constraint firstItem="007-W3-nGf" firstAttribute="top" secondItem="0d3-wc-cEe" secondAttribute="top" constant="8" id="o90-4e-Nfb"/>
-                                                    <constraint firstItem="fN5-1a-ofW" firstAttribute="top" secondItem="007-W3-nGf" secondAttribute="bottom" constant="8" id="pHo-2l-PsI"/>
-                                                </constraints>
-                                            </view>
-                                            <vibrancyEffect>
-                                                <blurEffect style="regular"/>
-                                            </vibrancyEffect>
-                                        </visualEffectView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="007-W3-nGf">
+                                            <rect key="frame" x="16" y="15.999999999999996" width="343" height="40.666666666666657"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN5-1a-ofW">
+                                            <rect key="frame" x="16" y="64.666666666666671" width="343" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="JCg-FU-Erg" secondAttribute="trailing" id="Hrl-TA-xhJ"/>
-                                        <constraint firstAttribute="bottom" secondItem="JCg-FU-Erg" secondAttribute="bottom" id="TCP-nb-AQU"/>
-                                        <constraint firstItem="JCg-FU-Erg" firstAttribute="leading" secondItem="uOh-ES-Tvv" secondAttribute="leading" id="klv-Vd-0qi"/>
-                                        <constraint firstItem="JCg-FU-Erg" firstAttribute="top" secondItem="uOh-ES-Tvv" secondAttribute="top" id="sRn-5r-Q6e"/>
+                                        <constraint firstItem="fN5-1a-ofW" firstAttribute="top" secondItem="007-W3-nGf" secondAttribute="bottom" constant="8" id="4cd-Oc-Yzd"/>
+                                        <constraint firstAttribute="trailing" secondItem="fN5-1a-ofW" secondAttribute="trailing" constant="16" id="CTi-jo-4jh"/>
+                                        <constraint firstAttribute="trailing" secondItem="007-W3-nGf" secondAttribute="trailing" constant="16" id="Mfx-rp-7UB"/>
+                                        <constraint firstItem="007-W3-nGf" firstAttribute="leading" secondItem="uOh-ES-Tvv" secondAttribute="leading" constant="16" id="OnP-SZ-wt6"/>
+                                        <constraint firstItem="fN5-1a-ofW" firstAttribute="leading" secondItem="uOh-ES-Tvv" secondAttribute="leading" constant="16" id="mbh-24-8X4"/>
+                                        <constraint firstItem="007-W3-nGf" firstAttribute="top" secondItem="uOh-ES-Tvv" secondAttribute="top" constant="16" id="rvx-WV-dd6"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="regular"/>
@@ -258,6 +219,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="539"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gMJ-Y2-9Ds"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FI-zT-vUU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

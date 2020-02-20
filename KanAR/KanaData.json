@@ -4,43 +4,78 @@
             "name":"Mutsu",
             "svg":"12416",
             "char":"む",
+            "type":"Hiragana",
             "desc":"Hiragana Character 'Mu'"
         },
         {
             "name":"Naganami",
             "svg":"12394",
             "char":"な",
+            "type":"Hiragana",
             "desc":"Hiragana Character 'Na'"
         },
         {
             "name":"Takao",
             "svg":"12383",
             "char":"た",
+            "type":"Hiragana",
             "desc":"Hiragana Character 'Ta'"
         },
         {
             "name":"HiraganaA",
             "svg":"12354",
             "char":"あ",
+            "type":"Hiragana",
             "desc":"Hiragana Character 'A'"
         },
         {
             "name":"HiraganaO",
             "svg":"12362",
             "char":"お",
+            "type":"Hiragana",
             "desc":"Hiragana Character 'O'"
         },
         {
             "name":"HiraganaSa",
             "svg":"12373",
             "char":"さ",
+            "type":"Hiragana",
             "desc":"Hiragana Character 'Sa'"
         },
         {
             "name":"HiraganaKi",
             "svg":"12365",
             "char":"き",
+            "type":"Hiragana",
             "desc":"Hiragana Character 'Ki'"
-        }
+        },
+        {
+            "name":"KatakanaA",
+            "svg":"12450",
+            "char":"ア",
+            "type":"Katakana",
+            "desc":"Katakana Character 'A'"
+        },
+        {
+            "name":"KatakanaO",
+            "svg":"12458",
+            "char":"オ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'O'"
+        },
+        {
+            "name":"KatakanaSa",
+            "svg":"12469",
+            "char":"サ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Sa'"
+        },
+        {
+            "name":"KatakanaKi",
+            "svg":"12461",
+            "char":"キ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ki'"
+        },
     ]
 }
