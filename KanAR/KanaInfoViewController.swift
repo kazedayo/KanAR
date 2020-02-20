@@ -8,13 +8,17 @@
 
 import UIKit
 import SwiftyJSON
+import AVFoundation
 
 class KanaInfoViewController: UIViewController {
     
     @IBOutlet weak var kanaLabel: UILabel!
     @IBOutlet weak var kanaDescriptionLabel: UILabel!
-    
+    @IBOutlet weak var pronounceButton: UIButton!
     var kanaData: JSON = []
+    var kyokoInstalled = false
+    
+    let speechSynthesizer = AVSpeechSynthesizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,13 @@ class KanaInfoViewController: UIViewController {
         let path = Bundle.main.path(forResource: "KanaData", ofType: "json")
         let jsonString = try! String(contentsOfFile: path!, encoding: .utf8)
         kanaData = JSON(parseJSON: jsonString)
+        //check if enhanced voice is installed in user's device
+        let voices = AVSpeechSynthesisVoice.speechVoices()
+        for voice in voices {
+            if (voice.identifier == "com.apple.ttsbundle.Kyoko-premium") {
+                kyokoInstalled = true
+            }
+        }
     }
     
     //MARK: Update View Text Lables
@@ -53,5 +64,16 @@ class KanaInfoViewController: UIViewController {
         UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
             self.view.alpha = hide ? 0 : 1
         }, completion: nil)
+    }
+    
+    @IBAction func playPronounciation(_ sender: UIButton) {
+        let speechUtterance = AVSpeechUtterance(string: kanaLabel.text!)
+        if (kyokoInstalled == true) {
+            speechUtterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.Kyoko-premium")
+        } else {
+            speechUtterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.siri_female_ja-JP_compact")
+        }
+        speechUtterance.rate = AVSpeechUtteranceMinimumSpeechRate
+        speechSynthesizer.speak(speechUtterance)
     }
 }

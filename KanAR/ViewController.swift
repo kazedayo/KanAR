@@ -156,12 +156,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         statusViewController.showMessage("Detected image “\(imageName)”")
         kanaInfoViewController.setInfo(key: imageName)
         kanaInfoViewController.setViewHidden(false)
-        for (_,object) in kanaData["Kana"] {
-            if (object["name"].stringValue == imageName) {
-                canvasViewController.currentCharacter = object["char"].stringValue
-                canvasViewController.characterType = object["type"].stringValue
-            }
-        }
+        canvasViewController.setInfo(key: imageName)
         canvasViewController.setViewHidden(false)
     }
     

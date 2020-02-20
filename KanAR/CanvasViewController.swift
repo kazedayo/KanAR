@@ -10,10 +10,12 @@ import UIKit
 import PencilKit
 import Vision
 import SwiftEntryKit
+import SwiftyJSON
 
 class CanvasViewController: UIViewController,PKCanvasViewDelegate {
 
     var canvasView: PKCanvasView!
+    var kanaData: JSON = []
     var currentCharacter: String = ""
     var characterType: String = ""
     var timer = Timer()
@@ -45,6 +47,9 @@ class CanvasViewController: UIViewController,PKCanvasViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let path = Bundle.main.path(forResource: "KanaData", ofType: "json")
+        let jsonString = try! String(contentsOfFile: path!, encoding: .utf8)
+        kanaData = JSON(parseJSON: jsonString)
         canvasView = PKCanvasView(frame: view.bounds)
         canvasView.delegate = self
         canvasView.allowsFingerDrawing = true
@@ -79,6 +84,17 @@ class CanvasViewController: UIViewController,PKCanvasViewDelegate {
         UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
             self.view.alpha = hide ? 0 : 1
         }, completion: nil)
+    }
+    
+    //MARK: Setter function for local variables
+    func setInfo(key: String) {
+        //get data from JSON
+        for (_,object) in kanaData["Kana"] {
+            if (object["name"].stringValue == key) {
+                currentCharacter = object["char"].stringValue
+                characterType = object["type"].stringValue
+            }
+        }
     }
     
     func canvasViewDidBeginUsingTool(_ canvasView: PKCanvasView) {
