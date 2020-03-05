@@ -39,6 +39,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     var currentCard = ""
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent // .default
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,7 +99,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         configuration.trackingImages = refImages
         configuration.maximumNumberOfTrackedImages = 1
         //people occluding
-        if #available(iOS 13.0, *), ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
+        if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
             configuration.frameSemantics.insert(.personSegmentationWithDepth)
         } else {
             // Fallback on earlier versions

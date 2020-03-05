@@ -173,16 +173,22 @@ class CanvasViewController: UIViewController,PKCanvasViewDelegate {
         
         if (success == true) {
             titleText = "You are correct!🎉"
-            descText = "You got the word \(character) correct!"
+            descText = "You wrote the word \(character) correct!"
             attributes.entryBackground = .color(color: EKColor(.systemGreen))
         } else {
             titleText = "Incorrect input!🙁"
             descText = "The app thinks that you wrote \(character) , try again!"
             attributes.entryBackground = .color(color: EKColor(.systemRed))
         }
+        attributes.statusBar = .light
         attributes.displayDuration = 3
         attributes.screenInteraction = .forward
         attributes.roundCorners = .all(radius: 10)
+        if (UIDevice.current.userInterfaceIdiom == .pad) {
+            let widthConstraint = EKAttributes.PositionConstraints.Edge.ratio(value: 0.5)
+            let heightConstraint = EKAttributes.PositionConstraints.Edge.intrinsic
+            attributes.positionConstraints.size = .init(width: widthConstraint, height: heightConstraint)
+        }
         attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
         attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
 
