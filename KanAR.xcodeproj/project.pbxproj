@@ -27,6 +27,10 @@
 		42B3CF38237EAAE1003FD4AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B3CF36237EAAE1003FD4AB /* LaunchScreen.storyboard */; };
 		42B3CF43237EAAE1003FD4AB /* KanARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF42237EAAE1003FD4AB /* KanARTests.swift */; };
 		42B3CF4E237EAAE1003FD4AB /* KanARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B3CF4D237EAAE1003FD4AB /* KanARUITests.swift */; };
+		42BC8EBB2417400300698E64 /* AudioPlaybackWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC8EBA2417400300698E64 /* AudioPlaybackWorker.swift */; };
+		42BC8EBD2417422500698E64 /* SpeechRecognizerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC8EBC2417422500698E64 /* SpeechRecognizerWorker.swift */; };
+		42BC8EBF2417431000698E64 /* PopupWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC8EBE2417431000698E64 /* PopupWorker.swift */; };
+		42BC8EC12417478C00698E64 /* VisionMLWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC8EC02417478C00698E64 /* VisionMLWorker.swift */; };
 		4ABC89B8A75E99550ED79EDA /* Pods_KanAR_KanARUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FBE25FBC39FF4819257893 /* Pods_KanAR_KanARUITests.framework */; };
 		CA9605C2AC84774A8B6FAC97 /* Pods_KanARTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0FA1103DC8482D532843F8 /* Pods_KanARTests.framework */; };
 		DB61995ADFA0F7167ECE9330 /* Pods_KanAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138C6BF649091DC7985273A3 /* Pods_KanAR.framework */; };
@@ -79,6 +83,10 @@
 		42B3CF49237EAAE1003FD4AB /* KanARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanARUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B3CF4D237EAAE1003FD4AB /* KanARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanARUITests.swift; sourceTree = "<group>"; };
 		42B3CF4F237EAAE1003FD4AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42BC8EBA2417400300698E64 /* AudioPlaybackWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlaybackWorker.swift; sourceTree = "<group>"; };
+		42BC8EBC2417422500698E64 /* SpeechRecognizerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerWorker.swift; sourceTree = "<group>"; };
+		42BC8EBE2417431000698E64 /* PopupWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWorker.swift; sourceTree = "<group>"; };
+		42BC8EC02417478C00698E64 /* VisionMLWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionMLWorker.swift; sourceTree = "<group>"; };
 		6A0FA1103DC8482D532843F8 /* Pods_KanARTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanARTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		769AD9B2FB7022BAFAD88FCF /* Pods-KanAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanAR.release.xcconfig"; path = "Target Support Files/Pods-KanAR/Pods-KanAR.release.xcconfig"; sourceTree = "<group>"; };
 		817F3EA61AFCA08CC85626C8 /* Pods-KanAR-KanARUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanAR-KanARUITests.debug.xcconfig"; path = "Target Support Files/Pods-KanAR-KanARUITests/Pods-KanAR-KanARUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +170,10 @@
 				426AAFDE23C1A751001ECF4B /* StatusViewController.swift */,
 				42B3CF31237EAADE003FD4AB /* Main.storyboard */,
 				42019DA123D060600044E44B /* KanaInfoViewController.swift */,
+				42BC8EBE2417431000698E64 /* PopupWorker.swift */,
+				42BC8EBC2417422500698E64 /* SpeechRecognizerWorker.swift */,
+				42BC8EBA2417400300698E64 /* AudioPlaybackWorker.swift */,
+				42BC8EC02417478C00698E64 /* VisionMLWorker.swift */,
 				425F5B4423FCF84400978211 /* CanvasViewController.swift */,
 				425F5B5123FE616400978211 /* CGRect+Extensions.swift */,
 				425F5B4F23FE611900978211 /* UIImage+Extensions.swift */,
@@ -450,13 +462,17 @@
 				425F5B5223FE616400978211 /* CGRect+Extensions.swift in Sources */,
 				425F5B4923FD1C4600978211 /* katakanaModel.mlmodel in Sources */,
 				425F5B4523FCF84400978211 /* CanvasViewController.swift in Sources */,
+				42BC8EBD2417422500698E64 /* SpeechRecognizerWorker.swift in Sources */,
+				42BC8EBB2417400300698E64 /* AudioPlaybackWorker.swift in Sources */,
 				425F5B4723FD1C3E00978211 /* hiraganaModel3.mlmodel in Sources */,
 				4267419523C32A5600776B56 /* ViewController+UIWebViewDelegate.swift in Sources */,
 				426AAFDF23C1A751001ECF4B /* StatusViewController.swift in Sources */,
+				42BC8EBF2417431000698E64 /* PopupWorker.swift in Sources */,
 				426AAFDD23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift in Sources */,
 				42B3CF30237EAADE003FD4AB /* ViewController.swift in Sources */,
 				425F5B5023FE611900978211 /* UIImage+Extensions.swift in Sources */,
 				42B3CF2C237EAADE003FD4AB /* AppDelegate.swift in Sources */,
+				42BC8EC12417478C00698E64 /* VisionMLWorker.swift in Sources */,
 				42019DA223D060600044E44B /* KanaInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,33 +16,8 @@ class CanvasViewController: UIViewController,PKCanvasViewDelegate {
 
     var canvasView: PKCanvasView!
     var kanaData: JSON = []
-    var currentCharacter: String = ""
-    var characterType: String = ""
     var timer = Timer()
-    lazy var hiraganaRequest: VNCoreMLRequest = {
-        do {
-            let model = try VNCoreMLModel(for: hiraganaModel3().model)
-            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] r,e in
-                self?.processResults(for: r, error: e)
-            })
-            request.imageCropAndScaleOption = .scaleFit
-            return request
-        } catch {
-            fatalError("Failed to load Vision ML Model: \(error)")
-        }
-    }()
-    lazy var katakanaRequest: VNCoreMLRequest = {
-        do {
-            let model = try VNCoreMLModel(for: katakanaModel().model)
-            let request = VNCoreMLRequest (model: model, completionHandler: { [weak self] r,e in
-                self?.processResults(for: r, error: e)
-            })
-            request.imageCropAndScaleOption = .scaleFit
-            return request
-        } catch {
-            fatalError("Failed to load Vision ML Model: \(error)")
-        }
-    }()
+    let visionMLWorker = VisionMLWorker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,8 +66,8 @@ class CanvasViewController: UIViewController,PKCanvasViewDelegate {
         //get data from JSON
         for (_,object) in kanaData["Kana"] {
             if (object["name"].stringValue == key) {
-                currentCharacter = object["char"].stringValue
-                characterType = object["type"].stringValue
+                visionMLWorker.currentCharacter = object["char"].stringValue
+                visionMLWorker.characterType = object["type"].stringValue
             }
         }
     }
@@ -106,7 +81,12 @@ class CanvasViewController: UIViewController,PKCanvasViewDelegate {
     }
     
     @objc func timerAction() {
-        predictKana(drawing: canvasView.drawing)
+        var image = UIImage()
+        //fix for dark mode drawing capture
+        canvasView.traitCollection.performAsCurrent {
+            image = preprocessImage()
+        }
+        visionMLWorker.predictKana(image: image)
         canvasView.drawing = PKDrawing()
     }
     
@@ -122,82 +102,5 @@ class CanvasViewController: UIViewController,PKCanvasViewDelegate {
         }
         
         return image
-    }
-    
-    func predictKana(drawing: PKDrawing) {
-        var image = UIImage()
-        
-        //fix for dark mode drawing capture
-        canvasView.traitCollection.performAsCurrent {
-            image = preprocessImage()
-        }
-        
-        guard let cgImage = image.cgImage else { return }
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-            do {
-                if (self.characterType == "Hiragana") {
-                    try handler.perform([self.hiraganaRequest])
-                } else if (self.characterType == "Katakana") {
-                    try handler.perform([self.katakanaRequest])
-                }
-            } catch {
-                print("Failed to perform Vision ML request.")
-            }
-        }
-    }
-    
-    func processResults(for request: VNRequest, error: Error?) {
-        DispatchQueue.main.async {
-            guard let results = request.results else {
-                print("unable to classify character");
-                return
-            }
-            
-            let observations = results as! [VNClassificationObservation]
-            let bestObservation = observations.first!.identifier
-            print(bestObservation)
-            if (bestObservation == self.currentCharacter) {
-                self.showPopup(success: true, character: bestObservation)
-            } else {
-                self.showPopup(success: false, character: bestObservation)
-            }
-        }
-    }
-    
-    func showPopup(success: Bool, character: String) {
-        var attributes = EKAttributes.topFloat
-        var titleText = ""
-        var descText = ""
-        
-        if (success == true) {
-            titleText = "You are correct!🎉"
-            descText = "You wrote the word \(character) correct!"
-            attributes.entryBackground = .color(color: EKColor(.systemGreen))
-        } else {
-            titleText = "Incorrect input!🙁"
-            descText = "The app thinks that you wrote \(character) , try again!"
-            attributes.entryBackground = .color(color: EKColor(.systemRed))
-        }
-        attributes.statusBar = .light
-        attributes.displayDuration = 3
-        attributes.screenInteraction = .forward
-        attributes.roundCorners = .all(radius: 10)
-        if (UIDevice.current.userInterfaceIdiom == .pad) {
-            let widthConstraint = EKAttributes.PositionConstraints.Edge.ratio(value: 0.5)
-            let heightConstraint = EKAttributes.PositionConstraints.Edge.intrinsic
-            attributes.positionConstraints.size = .init(width: widthConstraint, height: heightConstraint)
-        }
-        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
-        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
-
-        let title = EKProperty.LabelContent(text: titleText, style: .init(font: .preferredFont(forTextStyle: .title1), color: .white))
-        let description = EKProperty.LabelContent(text: descText, style: .init(font: .preferredFont(forTextStyle: .body), color: .white))
-        let simpleMessage = EKSimpleMessage(title: title, description: description)
-        let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
-
-        let contentView = EKNotificationMessageView(with: notificationMessage)
-        SwiftEntryKit.display(entry: contentView, using: attributes)
     }
 }
