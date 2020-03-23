@@ -14,6 +14,10 @@ class SpeechRecognizerWorker {
     let speechRecognizer = SFSpeechRecognizer(locale: .init(identifier: "ja-JP"))
     let audioEngine = AVAudioEngine()
     let popupWorker = PopupWorker()
+    let realmDBWorker = RealmDBWorker()
+    
+    var currentCharacterName: String = ""
+    
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
     
@@ -56,6 +60,7 @@ class SpeechRecognizerWorker {
                         self.popupWorker.showPopup(title: "Incorrect input!🙁", desc: "The app didn't match any input, try again!", bgcolor: .init(.systemRed), fontcolor: .white, duration: 3)
                     } else {
                         self.popupWorker.showPopup(title: "You are correct!🎉", desc: "You spoke the word \(char) correct!", bgcolor: .init(.systemGreen), fontcolor: .white, duration: 3)
+                        self.realmDBWorker.updateRecord(name: self.currentCharacterName, type: "speak")
                     }
                 }
             }

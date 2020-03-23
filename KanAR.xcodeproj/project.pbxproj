@@ -31,6 +31,10 @@
 		42BC8EBD2417422500698E64 /* SpeechRecognizerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC8EBC2417422500698E64 /* SpeechRecognizerWorker.swift */; };
 		42BC8EBF2417431000698E64 /* PopupWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC8EBE2417431000698E64 /* PopupWorker.swift */; };
 		42BC8EC12417478C00698E64 /* VisionMLWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC8EC02417478C00698E64 /* VisionMLWorker.swift */; };
+		42BC8EC72425EC5F00698E64 /* ProgressRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC8EC62425EC5F00698E64 /* ProgressRecord.swift */; };
+		42BC8EC92425EFCE00698E64 /* RealmDBWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC8EC82425EFCE00698E64 /* RealmDBWorker.swift */; };
+		42BC8ECB24273BF900698E64 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC8ECA24273BF900698E64 /* ProgressViewController.swift */; };
+		42BC8ECD24273E3300698E64 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BC8ECC24273E3300698E64 /* ProgressTableViewCell.swift */; };
 		4ABC89B8A75E99550ED79EDA /* Pods_KanAR_KanARUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FBE25FBC39FF4819257893 /* Pods_KanAR_KanARUITests.framework */; };
 		CA9605C2AC84774A8B6FAC97 /* Pods_KanARTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0FA1103DC8482D532843F8 /* Pods_KanARTests.framework */; };
 		DB61995ADFA0F7167ECE9330 /* Pods_KanAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138C6BF649091DC7985273A3 /* Pods_KanAR.framework */; };
@@ -87,6 +91,10 @@
 		42BC8EBC2417422500698E64 /* SpeechRecognizerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerWorker.swift; sourceTree = "<group>"; };
 		42BC8EBE2417431000698E64 /* PopupWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWorker.swift; sourceTree = "<group>"; };
 		42BC8EC02417478C00698E64 /* VisionMLWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionMLWorker.swift; sourceTree = "<group>"; };
+		42BC8EC62425EC5F00698E64 /* ProgressRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRecord.swift; sourceTree = "<group>"; };
+		42BC8EC82425EFCE00698E64 /* RealmDBWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBWorker.swift; sourceTree = "<group>"; };
+		42BC8ECA24273BF900698E64 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		42BC8ECC24273E3300698E64 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		6A0FA1103DC8482D532843F8 /* Pods_KanARTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KanARTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		769AD9B2FB7022BAFAD88FCF /* Pods-KanAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanAR.release.xcconfig"; path = "Target Support Files/Pods-KanAR/Pods-KanAR.release.xcconfig"; sourceTree = "<group>"; };
 		817F3EA61AFCA08CC85626C8 /* Pods-KanAR-KanARUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KanAR-KanARUITests.debug.xcconfig"; path = "Target Support Files/Pods-KanAR-KanARUITests/Pods-KanAR-KanARUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +177,8 @@
 				426AAFDC23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift */,
 				426AAFDE23C1A751001ECF4B /* StatusViewController.swift */,
 				42B3CF31237EAADE003FD4AB /* Main.storyboard */,
+				42BC8ECA24273BF900698E64 /* ProgressViewController.swift */,
+				42BC8ECC24273E3300698E64 /* ProgressTableViewCell.swift */,
 				42019DA123D060600044E44B /* KanaInfoViewController.swift */,
 				42BC8EBE2417431000698E64 /* PopupWorker.swift */,
 				42BC8EBC2417422500698E64 /* SpeechRecognizerWorker.swift */,
@@ -177,6 +187,8 @@
 				425F5B4423FCF84400978211 /* CanvasViewController.swift */,
 				425F5B5123FE616400978211 /* CGRect+Extensions.swift */,
 				425F5B4F23FE611900978211 /* UIImage+Extensions.swift */,
+				42BC8EC62425EC5F00698E64 /* ProgressRecord.swift */,
+				42BC8EC82425EFCE00698E64 /* RealmDBWorker.swift */,
 				426AAFE023C2138B001ECF4B /* infinite.js */,
 				426AAFE223C22A40001ECF4B /* asvg.js */,
 				42622D7E23D5ACDE0087D910 /* KanaData.json */,
@@ -462,6 +474,7 @@
 				425F5B5223FE616400978211 /* CGRect+Extensions.swift in Sources */,
 				425F5B4923FD1C4600978211 /* katakanaModel.mlmodel in Sources */,
 				425F5B4523FCF84400978211 /* CanvasViewController.swift in Sources */,
+				42BC8EC72425EC5F00698E64 /* ProgressRecord.swift in Sources */,
 				42BC8EBD2417422500698E64 /* SpeechRecognizerWorker.swift in Sources */,
 				42BC8EBB2417400300698E64 /* AudioPlaybackWorker.swift in Sources */,
 				425F5B4723FD1C3E00978211 /* hiraganaModel3.mlmodel in Sources */,
@@ -470,9 +483,12 @@
 				42BC8EBF2417431000698E64 /* PopupWorker.swift in Sources */,
 				426AAFDD23C1A6BA001ECF4B /* ViewController+ARSessionDelegate.swift in Sources */,
 				42B3CF30237EAADE003FD4AB /* ViewController.swift in Sources */,
+				42BC8ECD24273E3300698E64 /* ProgressTableViewCell.swift in Sources */,
 				425F5B5023FE611900978211 /* UIImage+Extensions.swift in Sources */,
 				42B3CF2C237EAADE003FD4AB /* AppDelegate.swift in Sources */,
 				42BC8EC12417478C00698E64 /* VisionMLWorker.swift in Sources */,
+				42BC8ECB24273BF900698E64 /* ProgressViewController.swift in Sources */,
+				42BC8EC92425EFCE00698E64 /* RealmDBWorker.swift in Sources */,
 				42019DA223D060600044E44B /* KanaInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

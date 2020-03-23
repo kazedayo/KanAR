@@ -63,6 +63,7 @@ class KanaInfoViewController: UIViewController {
             if (object["name"].stringValue == key) {
                 character = object["char"].stringValue
                 description = object["desc"].stringValue
+                speechRecognizerWorker.currentCharacterName = object["name"].stringValue
             }
         }
         kanaLabel.text = character

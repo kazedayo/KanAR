@@ -1,32 +1,32 @@
 {
     "Kana": [
         {
-            "name":"Mutsu",
-            "svg":"12416",
-            "char":"む",
-            "type":"Hiragana",
-            "desc":"Hiragana Character 'Mu'"
-        },
-        {
-            "name":"Naganami",
-            "svg":"12394",
-            "char":"な",
-            "type":"Hiragana",
-            "desc":"Hiragana Character 'Na'"
-        },
-        {
-            "name":"Takao",
-            "svg":"12383",
-            "char":"た",
-            "type":"Hiragana",
-            "desc":"Hiragana Character 'Ta'"
-        },
-        {
             "name":"HiraganaA",
             "svg":"12354",
             "char":"あ",
             "type":"Hiragana",
             "desc":"Hiragana Character 'A'"
+        },
+        {
+            "name":"HiraganaI",
+            "svg":"12356",
+            "char":"い",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'I'"
+        },
+        {
+            "name":"HiraganaU",
+            "svg":"12358",
+            "char":"う",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'U'"
+        },
+        {
+            "name":"HiraganaE",
+            "svg":"12360",
+            "char":"え",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'E'"
         },
         {
             "name":"HiraganaO",
@@ -36,11 +36,11 @@
             "desc":"Hiragana Character 'O'"
         },
         {
-            "name":"HiraganaSa",
-            "svg":"12373",
-            "char":"さ",
+            "name":"HiraganaKa",
+            "svg":"12363",
+            "char":"か",
             "type":"Hiragana",
-            "desc":"Hiragana Character 'Sa'"
+            "desc":"Hiragana Character 'Ka'"
         },
         {
             "name":"HiraganaKi",
@@ -50,11 +50,305 @@
             "desc":"Hiragana Character 'Ki'"
         },
         {
+            "name":"HiraganaKu",
+            "svg":"12367",
+            "char":"く",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ku'"
+        },
+        {
+            "name":"HiraganaKe",
+            "svg":"12369",
+            "char":"け",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ke'"
+        },
+        {
+            "name":"HiraganaKo",
+            "svg":"12371",
+            "char":"こ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ko'"
+        },
+        {
+            "name":"HiraganaSa",
+            "svg":"12373",
+            "char":"さ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Sa'"
+        },
+        {
+            "name":"HiraganaShi",
+            "svg":"12375",
+            "char":"し",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Shi'"
+        },
+        {
+            "name":"HiraganaSu",
+            "svg":"12377",
+            "char":"す",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Su'"
+        },
+        {
+            "name":"HiraganaSe",
+            "svg":"12379",
+            "char":"せ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Se'"
+        },
+        {
+            "name":"HiraganaSo",
+            "svg":"12381",
+            "char":"そ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'So'"
+        },
+        {
+            "name":"HiraganaTa",
+            "svg":"12383",
+            "char":"た",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ta'"
+        },
+        {
+            "name":"HiraganaChi",
+            "svg":"12385",
+            "char":"ち",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Chi'"
+        },
+        {
+            "name":"HiraganaTsu",
+            "svg":"12387",
+            "char":"つ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Tsu'"
+        },
+        {
+            "name":"HiraganaTe",
+            "svg":"12390",
+            "char":"て",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Te'"
+        },
+        {
+            "name":"HiraganaTo",
+            "svg":"12392",
+            "char":"と",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'To'"
+        },
+        {
+            "name":"HiraganaNa",
+            "svg":"12394",
+            "char":"な",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Na'"
+        },
+        {
+            "name":"HiraganaNi",
+            "svg":"12395",
+            "char":"に",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ni'"
+        },
+        {
+            "name":"HiraganaNu",
+            "svg":"12396",
+            "char":"ぬ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Nu'"
+        },
+        {
+            "name":"HiraganaNe",
+            "svg":"12397",
+            "char":"ね",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ne'"
+        },
+        {
+            "name":"HiraganaNo",
+            "svg":"12398",
+            "char":"の",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'No'"
+        },
+        {
+            "name":"HiraganaHa",
+            "svg":"12399",
+            "char":"は",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ha'"
+        },
+        {
+            "name":"HiraganaHi",
+            "svg":"12402",
+            "char":"ひ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Hi'"
+        },
+        {
+            "name":"HiraganaFu",
+            "svg":"12405",
+            "char":"ふ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Fu'"
+        },
+        {
+            "name":"HiraganaHe",
+            "svg":"12408",
+            "char":"へ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'He'"
+        },
+        {
+            "name":"HiraganaHo",
+            "svg":"12411",
+            "char":"ほ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ho'"
+        },
+        {
+            "name":"HiraganaMa",
+            "svg":"12414",
+            "char":"ま",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ma'"
+        },
+        {
+            "name":"HiraganaMi",
+            "svg":"12415",
+            "char":"み",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Mi'"
+        },
+        {
+            "name":"HiraganaMu",
+            "svg":"12416",
+            "char":"む",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Mu'"
+        },
+        {
+            "name":"HiraganaMe",
+            "svg":"12417",
+            "char":"め",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Me'"
+        },
+        {
+            "name":"HiraganaMo",
+            "svg":"12418",
+            "char":"も",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Mo'"
+        },
+        {
+            "name":"HiraganaYa",
+            "svg":"12420",
+            "char":"や",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ya'"
+        },
+        {
+            "name":"HiraganaYu",
+            "svg":"12422",
+            "char":"ゆ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Yu'"
+        },
+        {
+            "name":"HiraganaYo",
+            "svg":"12424",
+            "char":"よ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Yo'"
+        },
+        {
+            "name":"HiraganaRa",
+            "svg":"12425",
+            "char":"ら",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ra'"
+        },
+        {
+            "name":"HiraganaRi",
+            "svg":"12426",
+            "char":"り",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ri'"
+        },
+        {
+            "name":"HiraganaRu",
+            "svg":"12427",
+            "char":"る",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ru'"
+        },
+        {
+            "name":"HiraganaRe",
+            "svg":"12428",
+            "char":"れ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Re'"
+        },
+        {
+            "name":"HiraganaRo",
+            "svg":"12429",
+            "char":"ろ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Ro'"
+        },
+        {
+            "name":"HiraganaWa",
+            "svg":"12431",
+            "char":"わ",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Wa'"
+        },
+        {
+            "name":"HiraganaWo",
+            "svg":"12434",
+            "char":"を",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'Wo'"
+        },
+        {
+            "name":"HiraganaN",
+            "svg":"12435",
+            "char":"ん",
+            "type":"Hiragana",
+            "desc":"Hiragana Character 'N'"
+        },
+        {
             "name":"KatakanaA",
             "svg":"12450",
             "char":"ア",
             "type":"Katakana",
             "desc":"Katakana Character 'A'"
+        },
+        {
+            "name":"KatakanaI",
+            "svg":"12452",
+            "char":"イ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'I'"
+        },
+        {
+            "name":"KatakanaU",
+            "svg":"12454",
+            "char":"ウ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'U'"
+        },
+        {
+            "name":"KatakanaE",
+            "svg":"12456",
+            "char":"エ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'E'"
         },
         {
             "name":"KatakanaO",
@@ -64,11 +358,11 @@
             "desc":"Katakana Character 'O'"
         },
         {
-            "name":"KatakanaSa",
-            "svg":"12469",
-            "char":"サ",
+            "name":"KatakanaKa",
+            "svg":"12459",
+            "char":"カ",
             "type":"Katakana",
-            "desc":"Katakana Character 'Sa'"
+            "desc":"Katakana Character 'Ka'"
         },
         {
             "name":"KatakanaKi",
@@ -77,5 +371,278 @@
             "type":"Katakana",
             "desc":"Katakana Character 'Ki'"
         },
+        {
+            "name":"KatakanaKu",
+            "svg":"12463",
+            "char":"ク",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ku'"
+        },
+        {
+            "name":"KatakanaKe",
+            "svg":"12465",
+            "char":"ケ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ke'"
+        },
+        {
+            "name":"KatakanaKo",
+            "svg":"12467",
+            "char":"コ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ko'"
+        },
+        {
+            "name":"KatakanaSa",
+            "svg":"12469",
+            "char":"サ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Sa'"
+        },
+        {
+            "name":"KatakanaShi",
+            "svg":"12471",
+            "char":"シ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Shi'"
+        },
+        {
+            "name":"KatakanaSu",
+            "svg":"12473",
+            "char":"ス",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Su'"
+        },
+        {
+            "name":"KatakanaSe",
+            "svg":"12475",
+            "char":"セ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Se'"
+        },
+        {
+            "name":"KatakanaSo",
+            "svg":"12477",
+            "char":"ソ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'So'"
+        },
+        {
+            "name":"KatakanaTa",
+            "svg":"12479",
+            "char":"タ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ta'"
+        },
+        {
+            "name":"KatakanaChi",
+            "svg":"12481",
+            "char":"チ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Chi'"
+        },
+        {
+            "name":"KatakanaTsu",
+            "svg":"12484",
+            "char":"ツ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Tsu'"
+        },
+        {
+            "name":"KatakanaTe",
+            "svg":"12486",
+            "char":"テ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Te'"
+        },
+        {
+            "name":"KatakanaTo",
+            "svg":"12488",
+            "char":"ト",
+            "type":"Katakana",
+            "desc":"Katakana Character 'To'"
+        },
+        {
+            "name":"KatakanaNa",
+            "svg":"12490",
+            "char":"ナ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Na'"
+        },
+        {
+            "name":"KatakanaNi",
+            "svg":"12491",
+            "char":"ニ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ni'"
+        },
+        {
+            "name":"KatakanaNu",
+            "svg":"12492",
+            "char":"ヌ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Nu'"
+        },
+        {
+            "name":"KatakanaNe",
+            "svg":"12493",
+            "char":"ネ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ne'"
+        },
+        {
+            "name":"KatakanaNo",
+            "svg":"12494",
+            "char":"ノ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'No'"
+        },
+        {
+            "name":"KatakanaHa",
+            "svg":"12495",
+            "char":"ハ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ha'"
+        },
+        {
+            "name":"KatakanaHi",
+            "svg":"12498",
+            "char":"ヒ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Hi'"
+        },
+        {
+            "name":"KatakanaFu",
+            "svg":"12501",
+            "char":"フ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Fu'"
+        },
+        {
+            "name":"KatakanaHe",
+            "svg":"12504",
+            "char":"ヘ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'He'"
+        },
+        {
+            "name":"KatakanaHo",
+            "svg":"12507",
+            "char":"ホ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ho'"
+        },
+        {
+            "name":"KatakanaMa",
+            "svg":"12510",
+            "char":"マ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ma'"
+        },
+        {
+            "name":"KatakanaMi",
+            "svg":"12511",
+            "char":"ミ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Mi'"
+        },
+        {
+            "name":"KatakanaMu",
+            "svg":"12512",
+            "char":"ム",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Mu'"
+        },
+        {
+            "name":"KatakanaMe",
+            "svg":"12513",
+            "char":"メ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Me'"
+        },
+        {
+            "name":"KatakanaMo",
+            "svg":"12514",
+            "char":"モ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Mo'"
+        },
+        {
+            "name":"KatakanaYa",
+            "svg":"12516",
+            "char":"ヤ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ya'"
+        },
+        {
+            "name":"KatakanaYu",
+            "svg":"12518",
+            "char":"ユ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Yu'"
+        },
+        {
+            "name":"KatakanaYo",
+            "svg":"12520",
+            "char":"ヨ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Yo'"
+        },
+        {
+            "name":"KatakanaRa",
+            "svg":"12521",
+            "char":"ラ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ra'"
+        },
+        {
+            "name":"KatakanaRi",
+            "svg":"12522",
+            "char":"リ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ri'"
+        },
+        {
+            "name":"KatakanaRu",
+            "svg":"12523",
+            "char":"ル",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ru'"
+        },
+        {
+            "name":"KatakanaRe",
+            "svg":"12524",
+            "char":"レ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Re'"
+        },
+        {
+            "name":"KatakanaRo",
+            "svg":"12525",
+            "char":"ロ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Ro'"
+        },
+        {
+            "name":"KatakanaWa",
+            "svg":"12527",
+            "char":"ワ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Wa'"
+        },
+        {
+            "name":"KatakanaWo",
+            "svg":"12530",
+            "char":"ヲ",
+            "type":"Katakana",
+            "desc":"Katakana Character 'Wo'"
+        },
+        {
+            "name":"KatakanaN",
+            "svg":"12531",
+            "char":"ン",
+            "type":"Katakana",
+            "desc":"Katakana Character 'N'"
+        }
     ]
 }

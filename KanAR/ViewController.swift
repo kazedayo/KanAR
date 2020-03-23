@@ -46,6 +46,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //check whether db has data, if not init with default set
+        let realmDBWorker = RealmDBWorker()
+        if (realmDBWorker.retrieveRecords(type: "Hiragana").count == 0 || realmDBWorker.retrieveRecords(type: "Katakana").count == 0) {
+            realmDBWorker.initRecords()
+        }
+        
         // Set the view's delegate
         sceneView.delegate = self
         sceneView.session.delegate = self

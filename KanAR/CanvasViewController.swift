@@ -66,6 +66,7 @@ class CanvasViewController: UIViewController,PKCanvasViewDelegate {
         //get data from JSON
         for (_,object) in kanaData["Kana"] {
             if (object["name"].stringValue == key) {
+                visionMLWorker.currentCharacterName = object["name"].stringValue
                 visionMLWorker.currentCharacter = object["char"].stringValue
                 visionMLWorker.characterType = object["type"].stringValue
             }

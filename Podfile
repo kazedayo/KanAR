@@ -8,6 +8,7 @@ target 'KanAR' do
   # Pods for KanAR
   pod 'SwiftyJSON'
   pod 'SwiftEntryKit'
+  pod 'RealmSwift'
 
   target 'KanARTests' do
     inherit! :search_paths

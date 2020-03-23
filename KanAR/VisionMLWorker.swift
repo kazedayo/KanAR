@@ -11,9 +11,11 @@ import UIKit
 import Vision
 
 class VisionMLWorker {
+    var currentCharacterName: String = ""
     var currentCharacter: String = ""
     var characterType: String = ""
     let popupWorker = PopupWorker()
+    let realmDBWorker = RealmDBWorker()
     
     lazy var hiraganaRequest: VNCoreMLRequest = {
         do {
@@ -70,6 +72,7 @@ class VisionMLWorker {
             print(bestObservation)
             if (bestObservation == self.currentCharacter) {
                 self.popupWorker.showPopup(title: "You are correct!🎉", desc: "You wrote the word \(self.currentCharacter) correct!", bgcolor: .init(.systemGreen), fontcolor: .white, duration: 3)
+                self.realmDBWorker.updateRecord(name: self.currentCharacterName, type: "write")
             } else {
                 self.popupWorker.showPopup(title: "Incorrect input!🙁", desc: "The app thinks that you wrote \(bestObservation) , try again!", bgcolor: .init(.systemRed), fontcolor: .white, duration: 3)
             }
