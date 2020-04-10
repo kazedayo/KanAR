@@ -19,6 +19,7 @@ class KanaInfoViewController: UIViewController {
     @IBOutlet weak var recordButton: UIButton!
     
     var kanaData: JSON = []
+    var currentIndex = 0
     
     let audioPlaybackWorker = AudioPlaybackWorker()
     let speechRecognizerWorker = SpeechRecognizerWorker()
@@ -59,11 +60,16 @@ class KanaInfoViewController: UIViewController {
         //get data from JSON
         var character = ""
         var description = ""
-        for (_,object) in kanaData["Kana"] {
+        for (index,object) in kanaData["Kana"] {
             if (object["name"].stringValue == key) {
                 character = object["char"].stringValue
                 description = object["desc"].stringValue
                 speechRecognizerWorker.currentCharacterName = object["name"].stringValue
+                if (object["name"].stringValue.contains("Katakana")) {
+                    self.currentIndex = Int(index)! - 46
+                } else {
+                    self.currentIndex = Int(index)!
+                }
             }
         }
         kanaLabel.text = character
@@ -89,7 +95,8 @@ class KanaInfoViewController: UIViewController {
     }
     
     @IBAction func recordButtonHold(_ sender: UIButton) {
-        speechRecognizerWorker.startSpeechRecognition(char: kanaLabel.text!)
+        let char = kanaData["Kana"][currentIndex]["char"].stringValue
+        speechRecognizerWorker.startSpeechRecognition(recChar: char, displayChar: kanaLabel.text!)
     }
     
     @IBAction func recordButtonRelease(_ sender: UIButton) {

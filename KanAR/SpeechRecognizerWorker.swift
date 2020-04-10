@@ -21,8 +21,10 @@ class SpeechRecognizerWorker {
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
     
-    func startSpeechRecognition(char: String) {
-        popupWorker.showPopup(title: "I'm listening...", desc: "Keep holding the button.\nRelease to end recording.", bgcolor: .standardBackground, fontcolor: .standardContent, duration: .infinity)
+    func startSpeechRecognition(recChar: String, displayChar: String) {
+        DispatchQueue.main.async {
+            self.popupWorker.showPopup(title: "I'm listening...", desc: "Keep holding the button.\nRelease to end recording.", bgcolor: .standardBackground, fontcolor: .standardContent, duration: .infinity)
+        }
         recognitionTask?.cancel()
         recognitionTask = nil
         
@@ -52,14 +54,14 @@ class SpeechRecognizerWorker {
                     print(result.transcriptions)
                     var matched = false
                     for transcript in result.transcriptions {
-                        if (transcript.formattedString.contains(char)) {
+                        if (transcript.formattedString.contains(recChar)) {
                             matched = true
                         }
                     }
                     if (matched==false) {
                         self.popupWorker.showPopup(title: "Incorrect input!🙁", desc: "The app didn't match any input, try again!", bgcolor: .init(.systemRed), fontcolor: .white, duration: 3)
                     } else {
-                        self.popupWorker.showPopup(title: "You are correct!🎉", desc: "You spoke the word \(char) correct!", bgcolor: .init(.systemGreen), fontcolor: .white, duration: 3)
+                        self.popupWorker.showPopup(title: "You are correct!🎉", desc: "You spoke the word \(displayChar) correct!", bgcolor: .init(.systemGreen), fontcolor: .white, duration: 3)
                         self.realmDBWorker.updateRecord(name: self.currentCharacterName, type: "speak")
                     }
                 }

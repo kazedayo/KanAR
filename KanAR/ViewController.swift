@@ -52,6 +52,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             realmDBWorker.initRecords()
         }
         
+        //check if default learing target was set, if not set default to 15 times
+        let userDefaults = UserDefaults.standard
+        if userDefaults.integer(forKey: "target") == 0 {
+            userDefaults.set(15, forKey: "target")
+        }
+        
         // Set the view's delegate
         sceneView.delegate = self
         sceneView.session.delegate = self
