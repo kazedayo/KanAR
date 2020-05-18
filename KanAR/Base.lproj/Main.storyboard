@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -94,15 +94,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pew-pd-Sww">
                                 <rect key="frame" x="0.0" y="76" width="375" height="121.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learning Target: xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBc-64-a2t">
-                                        <rect key="frame" x="115" y="0.0" width="145.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Target: xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBc-64-a2t">
+                                        <rect key="frame" x="129" y="0.0" width="117" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MY-Re-bK6">
-                                        <rect key="frame" x="102" y="40.5" width="171" height="30"/>
-                                        <state key="normal" title="Set Your Progress Target"/>
+                                        <rect key="frame" x="116" y="40.5" width="143" height="30"/>
+                                        <state key="normal" title="Set Your Daily Target"/>
                                         <connections>
                                             <action selector="targetButtonPressed:" destination="GwJ-Rl-MeV" eventType="touchUpInside" id="qjB-jw-yhS"/>
                                         </connections>
@@ -139,8 +139,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Progress: xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDD-5F-FkT">
-                                                            <rect key="frame" x="0.0" y="27.5" width="94" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Today's Progress: 0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDD-5F-FkT">
+                                                            <rect key="frame" x="0.0" y="27.5" width="164" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -199,25 +199,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbv-o7-XHN">
-                                <rect key="frame" x="127.5" y="156" width="120.5" height="143.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="06o-XI-aSZ">
-                                <rect key="frame" x="0.0" y="369.5" width="375" height="73"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="VEB-9s-cdE">
+                                <rect key="frame" x="20" y="75.5" width="335" height="496"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Times Wrote: xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjb-Ql-Z5h">
-                                        <rect key="frame" x="86.5" y="0.0" width="202.5" height="26.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbv-o7-XHN">
+                                        <rect key="frame" x="107.5" y="0.0" width="120.5" height="143.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="120"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Times Spoke: xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYA-Tz-FdK">
-                                        <rect key="frame" x="85" y="46.5" width="205.5" height="26.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gK1-Mq-NxG">
+                                        <rect key="frame" x="18" y="168.5" width="299" height="32"/>
+                                        <segments>
+                                            <segment title="Today"/>
+                                            <segment title="Last 7 Days"/>
+                                            <segment title="Last 30 Days"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="switchDate:" destination="Dvh-FC-oon" eventType="valueChanged" id="vfV-z4-x91"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="06o-XI-aSZ">
+                                        <rect key="frame" x="54.5" y="224.5" width="226" height="200"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Times Correctly Wrote: xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AF-Yc-Yqj">
+                                                <rect key="frame" x="1.5" y="0.0" width="223.5" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Times Wrote: xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjb-Ql-Z5h">
+                                                <rect key="frame" x="20.5" y="44" width="185.5" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Times Correctly Spoke: xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4a-SJ-54y">
+                                                <rect key="frame" x="0.0" y="88" width="226" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Times Spoke: xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYA-Tz-FdK">
+                                                <rect key="frame" x="19" y="132" width="188" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence: xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-VF-PQ1">
+                                                <rect key="frame" x="48" y="176" width="130.5" height="24"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuh-hF-nNv">
+                                        <rect key="frame" x="0.0" y="449.5" width="335" height="46.5"/>
+                                        <string key="text">* Confidence is calculated by the times you correctly wrote and spoke the word over the total times you attempt to write and speak the word over the selected time period</string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -225,17 +266,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="06o-XI-aSZ" firstAttribute="top" secondItem="pbv-o7-XHN" secondAttribute="bottom" constant="70" id="27R-KV-4XW"/>
-                            <constraint firstItem="Ffa-iV-4rX" firstAttribute="trailing" secondItem="06o-XI-aSZ" secondAttribute="trailing" id="P2d-1V-zBa"/>
-                            <constraint firstItem="pbv-o7-XHN" firstAttribute="top" secondItem="Ffa-iV-4rX" secondAttribute="top" constant="100" id="UrC-Pt-0ON"/>
-                            <constraint firstItem="pbv-o7-XHN" firstAttribute="centerX" secondItem="3DX-Dd-VHP" secondAttribute="centerX" id="asN-g9-sBw"/>
-                            <constraint firstItem="06o-XI-aSZ" firstAttribute="leading" secondItem="Ffa-iV-4rX" secondAttribute="leading" id="lhK-lj-tQZ"/>
+                            <constraint firstItem="VEB-9s-cdE" firstAttribute="centerY" secondItem="3DX-Dd-VHP" secondAttribute="centerY" id="NR7-00-xKq"/>
+                            <constraint firstItem="VEB-9s-cdE" firstAttribute="centerX" secondItem="3DX-Dd-VHP" secondAttribute="centerX" id="Wqh-Li-LK1"/>
+                            <constraint firstItem="VEB-9s-cdE" firstAttribute="leading" secondItem="Ffa-iV-4rX" secondAttribute="leading" constant="20" id="fjT-TC-bCn"/>
+                            <constraint firstItem="Ffa-iV-4rX" firstAttribute="trailing" secondItem="VEB-9s-cdE" secondAttribute="trailing" constant="20" id="gjC-O7-FN5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ffa-iV-4rX"/>
                     </view>
                     <navigationItem key="navigationItem" id="2rg-nJ-aPh"/>
                     <connections>
                         <outlet property="charLabel" destination="pbv-o7-XHN" id="tcf-JO-L3k"/>
+                        <outlet property="confidenceLabel" destination="PTP-VF-PQ1" id="UUs-HT-N4o"/>
+                        <outlet property="correctSpokeCountLabel" destination="R4a-SJ-54y" id="eBz-8o-Jgi"/>
+                        <outlet property="correctWriteCountLabel" destination="3AF-Yc-Yqj" id="BBY-RX-n9B"/>
+                        <outlet property="segmentedControl" destination="gK1-Mq-NxG" id="six-xf-IZG"/>
                         <outlet property="speakCountLabel" destination="bYA-Tz-FdK" id="kdo-Gy-bLS"/>
                         <outlet property="writeCountLabel" destination="Xjb-Ql-Z5h" id="6kL-lo-ebm"/>
                     </connections>

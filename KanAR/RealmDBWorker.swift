@@ -11,14 +11,17 @@ import RealmSwift
 import SwiftyJSON
 
 class RealmDBWorker {
+    static let sharedInstance = RealmDBWorker()
+    
     let realm = try! Realm()
     
     private func createRecord(name: String,char: String) {
         let newRecord = ProgressRecord()
         newRecord.characterName = name
         newRecord.character = char
-        newRecord.writeCount = 0
-        newRecord.speakCount = 0
+        let dailyRecord = DailyRecord()
+        dailyRecord.date = Date().onlyDate!
+        newRecord.dailyRecords.append(dailyRecord)
         
         try! realm.write {
             realm.add(newRecord)
@@ -35,14 +38,25 @@ class RealmDBWorker {
         }
     }
     
-    func updateRecord(name: String,type: String) {
+    func updateRecord(name: String,type: String,correct: Bool) {
         let targetRecord = realm.objects(ProgressRecord.self).filter("characterName = '\(name)'")
         let record = targetRecord.first!
         try! realm.write {
+            if (record.dailyRecords.filter("date = %@", Date().onlyDate!).count == 0) {
+                let dailyRecord = DailyRecord()
+                dailyRecord.date = Date().onlyDate!
+                record.dailyRecords.append(dailyRecord)
+            }
             if type == "write" {
-                record.writeCount+=1
+                record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.writeCount += 1
+                if correct == true {
+                    record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.correctWriteCount += 1
+                }
             } else if type == "speak" {
-                record.speakCount+=1
+                record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.speakCount += 1
+                if correct == true {
+                    record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.correctSpeakCount += 1
+                }
             }
             realm.add(record,update: .modified)
         }
@@ -51,4 +65,24 @@ class RealmDBWorker {
     func retrieveRecords(type: String) -> Results<ProgressRecord> {
         return realm.objects(ProgressRecord.self).filter("characterName CONTAINS '\(type)'")
     }
+}
+
+extension Date {
+
+    var onlyDate: Date? {
+        get {
+            let calender = Calendar.current
+            var dateComponents = calender.dateComponents([.year, .month, .day], from: self)
+            dateComponents.timeZone = NSTimeZone.system
+            return calender.date(from: dateComponents)
+        }
+    }
+    
+    static func changeDaysBy(days : Int) -> Date {
+      let currentDate = Date()
+      var dateComponents = DateComponents()
+      dateComponents.day = days
+      return Calendar.current.date(byAdding: dateComponents, to: currentDate)!
+    }
+
 }

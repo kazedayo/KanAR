@@ -1,14 +1,32 @@
 {
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   },
   "resources" : [
     {
       "filename" : "HiraganaA.arreferenceimage"
     },
     {
+      "filename" : "HiraganaE.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaI.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaKa.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaKe.arreferenceimage"
+    },
+    {
       "filename" : "HiraganaKi.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaKo.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaKu.arreferenceimage"
     },
     {
       "filename" : "HiraganaO.arreferenceimage"
@@ -17,10 +35,43 @@
       "filename" : "HiraganaSa.arreferenceimage"
     },
     {
+      "filename" : "HiraganaSe.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaShi.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaSo.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaSu.arreferenceimage"
+    },
+    {
+      "filename" : "HiraganaU.arreferenceimage"
+    },
+    {
       "filename" : "KatakanaA.arreferenceimage"
     },
     {
+      "filename" : "KatakanaE.arreferenceimage"
+    },
+    {
+      "filename" : "KatakanaI.arreferenceimage"
+    },
+    {
+      "filename" : "KatakanaKa.arreferenceimage"
+    },
+    {
+      "filename" : "KatakanaKe.arreferenceimage"
+    },
+    {
       "filename" : "KatakanaKi.arreferenceimage"
+    },
+    {
+      "filename" : "KatakanaKo.arreferenceimage"
+    },
+    {
+      "filename" : "KatakanaKu.arreferenceimage"
     },
     {
       "filename" : "KatakanaO.arreferenceimage"
@@ -29,13 +80,19 @@
       "filename" : "KatakanaSa.arreferenceimage"
     },
     {
-      "filename" : "Mutsu.arreferenceimage"
+      "filename" : "KatakanaSe.arreferenceimage"
     },
     {
-      "filename" : "Naganami.arreferenceimage"
+      "filename" : "KatakanaShi.arreferenceimage"
     },
     {
-      "filename" : "Takao.arreferenceimage"
+      "filename" : "KatakanaSo.arreferenceimage"
+    },
+    {
+      "filename" : "KatakanaSu.arreferenceimage"
+    },
+    {
+      "filename" : "KatakanaU.arreferenceimage"
     }
   ]
 }

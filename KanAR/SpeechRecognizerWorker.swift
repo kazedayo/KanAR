@@ -13,8 +13,6 @@ import Speech
 class SpeechRecognizerWorker {
     let speechRecognizer = SFSpeechRecognizer(locale: .init(identifier: "ja-JP"))
     let audioEngine = AVAudioEngine()
-    let popupWorker = PopupWorker()
-    let realmDBWorker = RealmDBWorker()
     
     var currentCharacterName: String = ""
     
@@ -23,7 +21,7 @@ class SpeechRecognizerWorker {
     
     func startSpeechRecognition(recChar: String, displayChar: String) {
         DispatchQueue.main.async {
-            self.popupWorker.showPopup(title: "I'm listening...", desc: "Keep holding the button.\nRelease to end recording.", bgcolor: .standardBackground, fontcolor: .standardContent, duration: .infinity)
+            PopupWorker.sharedInstance.showPopup(title: "I'm listening...", desc: "Keep holding the button.\nRelease to end recording.", bgcolor: .standardBackground, fontcolor: .standardContent, duration: .infinity)
         }
         recognitionTask?.cancel()
         recognitionTask = nil
@@ -59,15 +57,16 @@ class SpeechRecognizerWorker {
                         }
                     }
                     if (matched==false) {
-                        self.popupWorker.showPopup(title: "Incorrect input!🙁", desc: "The app didn't match any input, try again!", bgcolor: .init(.systemRed), fontcolor: .white, duration: 3)
+                        PopupWorker.sharedInstance.showPopup(title: "Incorrect input!🙁", desc: "The app didn't match any input, try again!", bgcolor: .init(.systemRed), fontcolor: .white, duration: 3)
+                        RealmDBWorker.sharedInstance.updateRecord(name: self.currentCharacterName, type: "speak", correct: false)
                     } else {
-                        self.popupWorker.showPopup(title: "You are correct!🎉", desc: "You spoke the word \(displayChar) correct!", bgcolor: .init(.systemGreen), fontcolor: .white, duration: 3)
-                        self.realmDBWorker.updateRecord(name: self.currentCharacterName, type: "speak")
+                        PopupWorker.sharedInstance.showPopup(title: "You are correct!🎉", desc: "You spoke the word \(displayChar) correct!", bgcolor: .init(.systemGreen), fontcolor: .white, duration: 3)
+                        RealmDBWorker.sharedInstance.updateRecord(name: self.currentCharacterName, type: "speak", correct: true)
                     }
                 }
             }
             if error != nil {
-                self.popupWorker.showPopup(title: "Incorrect input!🙁", desc: "The app didn't match any input, try again!", bgcolor: .init(.systemRed), fontcolor: .white, duration: 3)
+                PopupWorker.sharedInstance.showPopup(title: "Incorrect input!🙁", desc: "The app didn't match any input, try again!", bgcolor: .init(.systemRed), fontcolor: .white, duration: 3)
                 self.audioEngine.stop()
                 inputNode.removeTap(onBus: 0)
                 self.recognitionRequest = nil

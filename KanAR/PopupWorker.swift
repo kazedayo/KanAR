@@ -11,6 +11,9 @@ import UIKit
 import SwiftEntryKit
 
 class PopupWorker {
+    
+    static let sharedInstance = PopupWorker()
+    
     func showPopup(title: String, desc: String, bgcolor: EKColor, fontcolor: EKColor, duration: Double) {
         var attributes = EKAttributes.topFloat
         let titleText = title

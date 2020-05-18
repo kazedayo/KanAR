@@ -25,15 +25,17 @@ class ProgressTableViewCell: UITableViewCell {
     }
     
     func initCell(record: ProgressRecord) {
-        let userDefaults = UserDefaults.standard
-        let write = Double(record.writeCount) / Double(userDefaults.integer(forKey: "target"))
-        let speak = Double(record.speakCount) / Double(userDefaults.integer(forKey: "target"))
-        let progress = (write + speak) * 100
         charLabel.text = record.character
-        if progress > 100 {
-            progressLabel.text = "Total Progress: 100%"
-        } else {
-            progressLabel.text = "Total Progress: \(Int(progress.rounded(.toNearestOrAwayFromZero)))%"
+        let userDefaults = UserDefaults.standard
+        if (record.dailyRecords.filter("date = %@", Date().onlyDate!).count != 0) {
+            let write = Double(record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.correctWriteCount) / Double(userDefaults.integer(forKey: "target") * 2)
+            let speak = Double(record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.correctSpeakCount) / Double(userDefaults.integer(forKey: "target") * 2)
+            let progress = (write + speak) * 100
+            if progress > 100 {
+                progressLabel.text = "Today's Progress: Finished!"
+            } else {
+                progressLabel.text = "Today's Progress: \(Int(progress.rounded(.toNearestOrAwayFromZero)))%"
+            }
         }
     }
 

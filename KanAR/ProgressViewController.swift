@@ -15,8 +15,6 @@ class ProgressViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet weak var setTargetButton: UIButton!
     @IBOutlet weak var targetLabel: UILabel!
     
-    let realmDBWorker = RealmDBWorker()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         progressTableView.delegate = self
@@ -29,17 +27,17 @@ class ProgressViewController: UIViewController,UITableViewDelegate,UITableViewDa
         if let index = progressTableView.indexPathForSelectedRow {
             progressTableView.deselectRow(at: index, animated: true)
         }
-        targetLabel.text = "Progress Target: \(UserDefaults.standard.integer(forKey: "target"))"
+        targetLabel.text = "Daily Target: \(UserDefaults.standard.integer(forKey: "target"))"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count = 0
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            count = realmDBWorker.retrieveRecords(type: "Hiragana").count
+            count = RealmDBWorker.sharedInstance.retrieveRecords(type: "Hiragana").count
             break
         case 1:
-            count = realmDBWorker.retrieveRecords(type: "Katakana").count
+            count = RealmDBWorker.sharedInstance.retrieveRecords(type: "Katakana").count
             break
         default:
             break
@@ -51,11 +49,11 @@ class ProgressViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let cell = progressTableView.dequeueReusableCell(withIdentifier: "progressTableViewCell", for: indexPath) as! ProgressTableViewCell
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            let record = realmDBWorker.retrieveRecords(type: "Hiragana")[indexPath.row]
+            let record = RealmDBWorker.sharedInstance.retrieveRecords(type: "Hiragana")[indexPath.row]
             cell.initCell(record: record)
             break
         case 1:
-            let record = realmDBWorker.retrieveRecords(type: "Katakana")[indexPath.row]
+            let record = RealmDBWorker.sharedInstance.retrieveRecords(type: "Katakana")[indexPath.row]
             cell.initCell(record: record)
             break
         default:
@@ -69,7 +67,7 @@ class ProgressViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     @IBAction func targetButtonPressed(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Set Your Learning Target", message: "Set the number of times you aim to write/speak a Kana character correctly", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Set Your Daily Learning Target", message: "Set the number of times you aim to write/speak a Kana character correctly every day", preferredStyle: .alert)
         alert.addTextField(configurationHandler: {
             textfield in
             textfield.keyboardType = .numberPad
@@ -81,11 +79,11 @@ class ProgressViewController: UIViewController,UITableViewDelegate,UITableViewDa
             if newTarget != "" {
                 let targetValue = Int(newTarget!)!
                 UserDefaults.standard.set(targetValue, forKey: "target")
-                self.targetLabel.text = "Progress Target: \(targetValue)"
+                self.targetLabel.text = "Daily Target: \(targetValue)"
                 self.progressTableView.reloadData()
             } else {
                 UserDefaults.standard.set(15, forKey: "target")
-                self.targetLabel.text = "Progress Target: \(15)"
+                self.targetLabel.text = "Daily Target: \(15)"
                 self.progressTableView.reloadData()
             }
         }))
@@ -103,16 +101,26 @@ class ProgressViewController: UIViewController,UITableViewDelegate,UITableViewDa
             let index = progressTableView.indexPathForSelectedRow?.row
             switch segmentedControl.selectedSegmentIndex {
             case 0:
-                let record = realmDBWorker.retrieveRecords(type: "Hiragana")[index!]
+                let record = RealmDBWorker.sharedInstance.retrieveRecords(type: "Hiragana")[index!]
                 destination.char = record.character
-                destination.writeCount = record.writeCount
-                destination.speakCount = record.speakCount
+                destination.record = record
+                if (record.dailyRecords.filter("date = %@", Date().onlyDate!).count != 0) {
+                    destination.writeCount = record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.writeCount
+                    destination.speakCount = record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.speakCount
+                    destination.correctSpeakCount = record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.correctSpeakCount
+                    destination.correctWriteCount = record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.correctWriteCount
+                }
                 break
             case 1:
-                let record = realmDBWorker.retrieveRecords(type: "Katakana")[index!]
+                let record = RealmDBWorker.sharedInstance.retrieveRecords(type: "Katakana")[index!]
                 destination.char = record.character
-                destination.writeCount = record.writeCount
-                destination.speakCount = record.speakCount
+                destination.record = record
+                if (record.dailyRecords.filter("date = %@", Date().onlyDate!).count != 0) {
+                    destination.writeCount = record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.writeCount
+                    destination.speakCount = record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.speakCount
+                    destination.correctSpeakCount = record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.correctSpeakCount
+                    destination.correctWriteCount = record.dailyRecords.filter("date = %@", Date().onlyDate!).first!.correctWriteCount
+                }
                 break
             default:
                 break

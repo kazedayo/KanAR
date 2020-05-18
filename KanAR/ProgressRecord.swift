@@ -11,8 +11,7 @@ import RealmSwift
 class ProgressRecord: Object {
     @objc dynamic var characterName = ""
     @objc dynamic var character = ""
-    @objc dynamic var writeCount = 0
-    @objc dynamic var speakCount = 0
+    let dailyRecords = List<DailyRecord>()
     
     override static func primaryKey() -> String? {
         return "characterName"
